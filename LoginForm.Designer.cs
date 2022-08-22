@@ -28,19 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormLogin));
             this.labelUsername = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.textBoxUsername = new System.Windows.Forms.TextBox();
             this.textBoxPassword = new System.Windows.Forms.TextBox();
             this.labelPassword = new System.Windows.Forms.Label();
             this.buttonLogin = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.labelLoginTitle = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // labelUsername
             // 
             this.labelUsername.AutoSize = true;
             this.labelUsername.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.14286F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelUsername.Location = new System.Drawing.Point(27, 47);
+            this.labelUsername.Location = new System.Drawing.Point(105, 289);
             this.labelUsername.Name = "labelUsername";
             this.labelUsername.Size = new System.Drawing.Size(145, 35);
             this.labelUsername.TabIndex = 0;
@@ -50,34 +53,35 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(61, 269);
+            this.label2.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.14286F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(139, 511);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(0, 25);
+            this.label2.Size = new System.Drawing.Size(0, 35);
             this.label2.TabIndex = 1;
             // 
             // textBoxUsername
             // 
             this.textBoxUsername.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBoxUsername.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.857143F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxUsername.Location = new System.Drawing.Point(239, 51);
+            this.textBoxUsername.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.14286F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxUsername.Location = new System.Drawing.Point(317, 293);
             this.textBoxUsername.Name = "textBoxUsername";
-            this.textBoxUsername.Size = new System.Drawing.Size(292, 37);
+            this.textBoxUsername.Size = new System.Drawing.Size(292, 41);
             this.textBoxUsername.TabIndex = 2;
             // 
             // textBoxPassword
             // 
             this.textBoxPassword.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBoxPassword.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.857143F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxPassword.Location = new System.Drawing.Point(239, 136);
+            this.textBoxPassword.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.14286F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxPassword.Location = new System.Drawing.Point(317, 378);
             this.textBoxPassword.Name = "textBoxPassword";
-            this.textBoxPassword.Size = new System.Drawing.Size(292, 37);
+            this.textBoxPassword.Size = new System.Drawing.Size(292, 41);
             this.textBoxPassword.TabIndex = 4;
             // 
             // labelPassword
             // 
             this.labelPassword.AutoSize = true;
             this.labelPassword.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.14286F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelPassword.Location = new System.Drawing.Point(27, 138);
+            this.labelPassword.Location = new System.Drawing.Point(105, 380);
             this.labelPassword.Name = "labelPassword";
             this.labelPassword.Size = new System.Drawing.Size(138, 35);
             this.labelPassword.TabIndex = 3;
@@ -87,14 +91,35 @@
             // buttonLogin
             // 
             this.buttonLogin.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.buttonLogin.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.857143F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonLogin.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.14286F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonLogin.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.buttonLogin.Location = new System.Drawing.Point(33, 269);
+            this.buttonLogin.Location = new System.Drawing.Point(111, 511);
             this.buttonLogin.Name = "buttonLogin";
             this.buttonLogin.Size = new System.Drawing.Size(498, 65);
             this.buttonLogin.TabIndex = 5;
             this.buttonLogin.Text = "Login";
             this.buttonLogin.UseVisualStyleBackColor = false;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel1.Location = new System.Drawing.Point(712, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(700, 972);
+            this.panel1.TabIndex = 6;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // labelLoginTitle
+            // 
+            this.labelLoginTitle.AutoSize = true;
+            this.labelLoginTitle.Font = new System.Drawing.Font("Microsoft YaHei UI", 14.14286F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelLoginTitle.Location = new System.Drawing.Point(283, 123);
+            this.labelLoginTitle.Name = "labelLoginTitle";
+            this.labelLoginTitle.Size = new System.Drawing.Size(112, 44);
+            this.labelLoginTitle.TabIndex = 8;
+            this.labelLoginTitle.Text = "Login";
             // 
             // FormLogin
             // 
@@ -102,6 +127,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.ClientSize = new System.Drawing.Size(1412, 972);
+            this.Controls.Add(this.labelLoginTitle);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.buttonLogin);
             this.Controls.Add(this.textBoxPassword);
             this.Controls.Add(this.labelPassword);
@@ -124,6 +151,8 @@
         private System.Windows.Forms.TextBox textBoxPassword;
         private System.Windows.Forms.Label labelPassword;
         private System.Windows.Forms.Button buttonLogin;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label labelLoginTitle;
     }
 }
 

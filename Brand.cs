@@ -10,21 +10,11 @@ using System.Windows.Forms;
 
 namespace Shoprite_Management_System
 {
-    public partial class FormLogin : Form
+    public partial class Brand : Form
     {
-        public FormLogin()
+        public Brand()
         {
             InitializeComponent();
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-           
-        }
-
-        private void label1_Click_1(object sender, EventArgs e)
-        {
-
         }
     }
 }

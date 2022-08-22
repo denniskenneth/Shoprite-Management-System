@@ -21,7 +21,6 @@ namespace Shoprite_Management_System
             customDesign();
             DBconn.connMain = new MySqlConnection(DBconn.Connection());
             DBconn.connMain.Open();
-            MessageBox.Show("DB is Connected");
             
         }
 
