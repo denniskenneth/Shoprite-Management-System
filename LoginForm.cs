@@ -31,5 +31,15 @@ namespace Shoprite_Management_System
         {
 
         }
+
+        private void FormLogin_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void labelClose_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
