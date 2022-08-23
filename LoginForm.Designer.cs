@@ -36,9 +36,9 @@
             this.labelPassword = new System.Windows.Forms.Label();
             this.buttonLogin = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.labelClose = new System.Windows.Forms.Label();
             this.labelLoginTitle = new System.Windows.Forms.Label();
             this.comboBoxRole = new System.Windows.Forms.ComboBox();
-            this.labelClose = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -69,7 +69,7 @@
             this.textBoxUsername.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBoxUsername.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.14286F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxUsername.Location = new System.Drawing.Point(173, 159);
-            this.textBoxUsername.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxUsername.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxUsername.Name = "textBoxUsername";
             this.textBoxUsername.Size = new System.Drawing.Size(160, 26);
             this.textBoxUsername.TabIndex = 2;
@@ -79,7 +79,7 @@
             this.textBoxPassword.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBoxPassword.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.14286F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxPassword.Location = new System.Drawing.Point(173, 205);
-            this.textBoxPassword.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxPassword.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxPassword.Name = "textBoxPassword";
             this.textBoxPassword.Size = new System.Drawing.Size(160, 26);
             this.textBoxPassword.TabIndex = 4;
@@ -102,7 +102,7 @@
             this.buttonLogin.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.14286F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonLogin.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.buttonLogin.Location = new System.Drawing.Point(61, 277);
-            this.buttonLogin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonLogin.Margin = new System.Windows.Forms.Padding(2);
             this.buttonLogin.Name = "buttonLogin";
             this.buttonLogin.Size = new System.Drawing.Size(272, 35);
             this.buttonLogin.TabIndex = 5;
@@ -116,11 +116,24 @@
             this.panel1.Controls.Add(this.labelClose);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel1.Location = new System.Drawing.Point(388, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(382, 477);
             this.panel1.TabIndex = 6;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // labelClose
+            // 
+            this.labelClose.AutoSize = true;
+            this.labelClose.BackColor = System.Drawing.Color.Red;
+            this.labelClose.Font = new System.Drawing.Font("Microsoft YaHei UI", 14.14286F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelClose.Location = new System.Drawing.Point(346, 9);
+            this.labelClose.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelClose.Name = "labelClose";
+            this.labelClose.Size = new System.Drawing.Size(25, 26);
+            this.labelClose.TabIndex = 10;
+            this.labelClose.Text = "X";
+            this.labelClose.Click += new System.EventHandler(this.labelClose_Click);
             // 
             // labelLoginTitle
             // 
@@ -145,19 +158,7 @@
             this.comboBoxRole.Size = new System.Drawing.Size(160, 28);
             this.comboBoxRole.TabIndex = 9;
             this.comboBoxRole.Text = "Role";
-            // 
-            // labelClose
-            // 
-            this.labelClose.AutoSize = true;
-            this.labelClose.BackColor = System.Drawing.Color.Red;
-            this.labelClose.Font = new System.Drawing.Font("Microsoft YaHei UI", 14.14286F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelClose.Location = new System.Drawing.Point(346, 9);
-            this.labelClose.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.labelClose.Name = "labelClose";
-            this.labelClose.Size = new System.Drawing.Size(25, 26);
-            this.labelClose.TabIndex = 10;
-            this.labelClose.Text = "X";
-            this.labelClose.Click += new System.EventHandler(this.labelClose_Click);
+            this.comboBoxRole.SelectedIndexChanged += new System.EventHandler(this.comboBoxRole_SelectedIndexChanged);
             // 
             // FormLogin
             // 
@@ -175,7 +176,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.labelUsername);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FormLogin";
             this.Text = "Shoprite - Login";
             this.Load += new System.EventHandler(this.FormLogin_Load);

@@ -41,5 +41,10 @@ namespace Shoprite_Management_System
         {
             Application.Exit();
         }
+
+        private void comboBoxRole_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

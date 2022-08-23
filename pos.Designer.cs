@@ -73,7 +73,7 @@
             this.panelLogo.Controls.Add(this.labelAdministrator);
             this.panelLogo.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelLogo.Location = new System.Drawing.Point(2, 2);
-            this.panelLogo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panelLogo.Margin = new System.Windows.Forms.Padding(2);
             this.panelLogo.Name = "panelLogo";
             this.panelLogo.Size = new System.Drawing.Size(201, 124);
             this.panelLogo.TabIndex = 0;
@@ -129,7 +129,7 @@
             this.panelLeftSide.Controls.Add(this.buttonLogout);
             this.panelLeftSide.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelLeftSide.Location = new System.Drawing.Point(0, 0);
-            this.panelLeftSide.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panelLeftSide.Margin = new System.Windows.Forms.Padding(2);
             this.panelLeftSide.Name = "panelLeftSide";
             this.panelLeftSide.Size = new System.Drawing.Size(225, 661);
             this.panelLeftSide.TabIndex = 0;
@@ -463,7 +463,7 @@
             this.panelTitle.Controls.Add(this.labelTitle);
             this.panelTitle.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelTitle.Location = new System.Drawing.Point(225, 0);
-            this.panelTitle.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panelTitle.Margin = new System.Windows.Forms.Padding(2);
             this.panelTitle.Name = "panelTitle";
             this.panelTitle.Size = new System.Drawing.Size(959, 56);
             this.panelTitle.TabIndex = 1;
@@ -477,6 +477,7 @@
             this.labelTitle.TabIndex = 2;
             this.labelTitle.Text = "Title Name";
             this.labelTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.labelTitle.Click += new System.EventHandler(this.labelTitle_Click);
             // 
             // panelMain
             // 
@@ -492,12 +493,12 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.ClientSize = new System.Drawing.Size(723, 374);
+            this.ClientSize = new System.Drawing.Size(1184, 661);
             this.Controls.Add(this.panelMain);
             this.Controls.Add(this.panelTitle);
             this.Controls.Add(this.panelLeftSide);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MinimumSize = new System.Drawing.Size(1200, 700);
             this.Name = "pos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

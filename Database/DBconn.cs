@@ -16,7 +16,7 @@ namespace Shoprite_Management_System.Database
 
         public string Connection()
         {
-            conn = "server=localhost;user=root;database=shoprite;password=";
+            conn = "server=localhost;user=root;database=shoprite;port=4000;password=";
             
             return conn;
         }

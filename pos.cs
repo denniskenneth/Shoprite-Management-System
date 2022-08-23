@@ -21,6 +21,7 @@ namespace Shoprite_Management_System
             customDesign();
             DBconn.connMain = new MySqlConnection(DBconn.Connection());
             DBconn.connMain.Open();
+            //MessageBox.Show("DB is Up");
             
         }
 
@@ -111,6 +112,11 @@ namespace Shoprite_Management_System
         private void buttonLogout_Click(object sender, EventArgs e)
         {
             hideSubmenu();
+        }
+
+        private void labelTitle_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
