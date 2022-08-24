@@ -24,10 +24,11 @@ namespace Shoprite_Management_System
             try
             {
                 dbconn.Open();
-                string query = $"INSERT INTO `category`( `catName`, `catDescription`) VALUES ('{tbCatName.Text.ToLower()}','{tbCatDesc.Text.ToLower()}')";
+                string query = $"INSERT INTO `category`(`catId`, `catName`, `catDescription`) VALUES ('{tbCatId.Text}','{tbCatName.Text.ToLower()}','{tbCatDesc.Text.ToLower()}')";
                 dbconn.Query(query);
                 MessageBox.Show("Category Added Successfully");
                 dbconn.Close();
+                populate();
             } catch(Exception ex)
             {
                 MessageBox.Show(ex.Message);
@@ -110,6 +111,13 @@ namespace Shoprite_Management_System
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void buttonProd_Click(object sender, EventArgs e)
+        {
+            Product product = new Product();
+            product.Show();
+            this.Hide();
         }
     }
 }

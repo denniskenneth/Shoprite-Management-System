@@ -45,5 +45,13 @@ namespace Shoprite_Management_System
         {
             fillDropdown();
         }
+
+        private void buttonCategory_Click(object sender, EventArgs e)
+        {
+            Category category = new Category();
+            category.Show();
+
+            this.Hide();
+        }
     }
 }
