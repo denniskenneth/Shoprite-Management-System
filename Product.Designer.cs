@@ -44,7 +44,7 @@
             this.button6 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
-            this.comboBoxRole = new System.Windows.Forms.ComboBox();
+            this.comboBoxCatRole = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.bunifuMaterialTextbox4 = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.label4 = new System.Windows.Forms.Label();
@@ -140,7 +140,7 @@
             this.panel3.Controls.Add(this.button6);
             this.panel3.Controls.Add(this.button5);
             this.panel3.Controls.Add(this.button4);
-            this.panel3.Controls.Add(this.comboBoxRole);
+            this.panel3.Controls.Add(this.comboBoxCatRole);
             this.panel3.Controls.Add(this.label5);
             this.panel3.Controls.Add(this.bunifuMaterialTextbox4);
             this.panel3.Controls.Add(this.label4);
@@ -284,18 +284,18 @@
             this.button4.Text = "Add";
             this.button4.UseVisualStyleBackColor = false;
             // 
-            // comboBoxRole
+            // comboBoxCatRole
             // 
-            this.comboBoxRole.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBoxRole.FormattingEnabled = true;
-            this.comboBoxRole.Items.AddRange(new object[] {
+            this.comboBoxCatRole.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxCatRole.FormattingEnabled = true;
+            this.comboBoxCatRole.Items.AddRange(new object[] {
             "ADMIN",
             "CASHIER"});
-            this.comboBoxRole.Location = new System.Drawing.Point(112, 265);
-            this.comboBoxRole.Name = "comboBoxRole";
-            this.comboBoxRole.Size = new System.Drawing.Size(212, 28);
-            this.comboBoxRole.TabIndex = 10;
-            this.comboBoxRole.Text = "Select Category";
+            this.comboBoxCatRole.Location = new System.Drawing.Point(112, 265);
+            this.comboBoxCatRole.Name = "comboBoxCatRole";
+            this.comboBoxCatRole.Size = new System.Drawing.Size(212, 28);
+            this.comboBoxCatRole.TabIndex = 10;
+            this.comboBoxCatRole.Text = "Select Category";
             // 
             // label5
             // 
@@ -433,6 +433,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "Product";
             this.Text = "Product";
+            this.Load += new System.EventHandler(this.Product_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -467,6 +468,6 @@
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.ComboBox comboBoxRole;
+        private System.Windows.Forms.ComboBox comboBoxCatRole;
     }
 }
