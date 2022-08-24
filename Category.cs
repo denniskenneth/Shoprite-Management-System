@@ -119,5 +119,13 @@ namespace Shoprite_Management_System
             product.Show();
             this.Hide();
         }
+
+        private void buttonCashier_Click(object sender, EventArgs e)
+        {
+            Category category = new Category();
+            category.Show();
+
+            this.Hide();
+        }
     }
 }

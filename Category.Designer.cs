@@ -98,6 +98,7 @@
             this.buttonCashier.TabIndex = 2;
             this.buttonCashier.Text = "Cashier";
             this.buttonCashier.UseVisualStyleBackColor = true;
+            this.buttonCashier.Click += new System.EventHandler(this.buttonCashier_Click);
             // 
             // button2
             // 
