@@ -79,3 +79,5 @@ C:\Users\Hp\Desktop\Shoprite-Management-System\bin\Debug\Bunifu_UI_v1.5.3.dll
 C:\Users\Hp\Desktop\Shoprite-Management-System\obj\Debug\Shoprite_Management_System.Splash.resources
 C:\Users\Hp\Desktop\Shoprite-Management-System\obj\Debug\Shoprite_Management_System.Product.resources
 C:\Users\Hp\Desktop\Shoprite-Management-System\bin\Debug\Guna.UI.dll
+C:\Users\Hp\Desktop\Shoprite-Management-System\obj\Debug\Shoprite_Management_System.Cashier.resources
+C:\Users\Hp\Desktop\Shoprite-Management-System\obj\Debug\Shoprite_Management_System.Category.resources
