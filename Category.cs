@@ -33,30 +33,83 @@ namespace Shoprite_Management_System
                 MessageBox.Show(ex.Message);
             }
         }
-
+        MySqlConnection conn = new MySqlConnection(DBconn.Connection());
         private void gunaDataGridViewCat_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            tbCatId.Text = gunaDataGridViewCat.SelectedRows[0].Cells[0].Value.ToString();
+            tbCatName.Text = gunaDataGridViewCat.SelectedRows[0].Cells[1].Value.ToString();
+            tbCatDesc.Text = gunaDataGridViewCat.SelectedRows[0].Cells[2].Value.ToString();
         }
 
         private void populate()
         {
-            dbconn.Open();
+            conn.Open();
             string query = $"SELECT * FROM `category`";
-            //dbconn.Query(query);
-            var reader = dbconn.Reader(query);
-            //MySqlCommandBuilder builder = new MySqlCommandBuilder(adapter);
-            DataTable table = new DataTable();
-            table.Load(reader.ExecuteReader());
 
-            //adapter.Fill(dataSet);
-            gunaDataGridViewCat.DataSource = table;
-            dbconn.Close();
+            //dbconn.Query(query);
+            //var reader = dbconn.Reader(query);
+            //MySqlCommandBuilder builder = new MySqlCommandBuilder(adapter);
+            MySqlDataAdapter adapter = new MySqlDataAdapter(query, conn);
+            MySqlCommandBuilder builder = new MySqlCommandBuilder(adapter);
+            var dataSet = new DataSet();
+            //DataTable table = new DataTable();
+            //table.Load(reader.ExecuteReader());
+            adapter.Fill(dataSet);
+            gunaDataGridViewCat.DataSource = dataSet.Tables[0];
+            //gunaDataGridViewCat.DataSource = table;
+            conn.Close();
         }
 
         private void Category_Load_1(object sender, EventArgs e)
         {
             populate();
+        }
+
+        private void buttonCatDelete_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (tbCatId.Text == "" || tbCatId.Text == " ")
+                    MessageBox.Show("Please Select a Category to Delete");
+                else
+                {
+                    conn.Open();
+                    string query = $"DELETE FROM `category` WHERE `catId` = '{tbCatId.Text}'";
+                    MySqlCommand cmd = new MySqlCommand(query, conn);
+                    cmd.ExecuteNonQuery();
+                    MessageBox.Show("Category Deleted Sucessfully");
+                    conn.Close();
+                    populate();
+                }
+            } catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void buttonCatEdit_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (tbCatName.Text == "" || tbCatId.Text == "" || tbCatDesc.Text == "")
+                    MessageBox.Show("PLease Enter the Missing Information");
+                else
+                {
+                    conn.Open();
+                    string query = $"UPDATE `category` SET `catName`='{tbCatName.Text}',`catDescription`='{tbCatDesc.Text}' WHERE `catId`='{tbCatId.Text}'";
+                    MySqlCommand cmd = new MySqlCommand(query, conn);
+                    cmd.ExecuteNonQuery();
+                    MessageBox.Show("Category Updated Sucessfully");
+                    conn.Close();
+                    populate();
+                }
+                
+                
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

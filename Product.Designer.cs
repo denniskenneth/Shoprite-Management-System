@@ -324,7 +324,6 @@
             this.bunifuMaterialTextbox4.Name = "bunifuMaterialTextbox4";
             this.bunifuMaterialTextbox4.Size = new System.Drawing.Size(212, 31);
             this.bunifuMaterialTextbox4.TabIndex = 8;
-            this.bunifuMaterialTextbox4.Text = "bunifuMaterialTextbox4";
             this.bunifuMaterialTextbox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // label4
@@ -354,7 +353,6 @@
             this.bunifuMaterialTextbox3.Name = "bunifuMaterialTextbox3";
             this.bunifuMaterialTextbox3.Size = new System.Drawing.Size(212, 31);
             this.bunifuMaterialTextbox3.TabIndex = 6;
-            this.bunifuMaterialTextbox3.Text = "bunifuMaterialTextbox3";
             this.bunifuMaterialTextbox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // label3
@@ -384,7 +382,6 @@
             this.bunifuMaterialTextbox2.Name = "bunifuMaterialTextbox2";
             this.bunifuMaterialTextbox2.Size = new System.Drawing.Size(212, 31);
             this.bunifuMaterialTextbox2.TabIndex = 4;
-            this.bunifuMaterialTextbox2.Text = "bunifuMaterialTextbox2";
             this.bunifuMaterialTextbox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // label2
@@ -414,7 +411,6 @@
             this.bunifuMaterialTextbox1.Name = "bunifuMaterialTextbox1";
             this.bunifuMaterialTextbox1.Size = new System.Drawing.Size(212, 31);
             this.bunifuMaterialTextbox1.TabIndex = 2;
-            this.bunifuMaterialTextbox1.Text = "bunifuMaterialTextbox1";
             this.bunifuMaterialTextbox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // label1

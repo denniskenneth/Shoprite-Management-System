@@ -39,8 +39,8 @@
             this.button1 = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.gunaDataGridViewCat = new Guna.UI.WinForms.GunaDataGridView();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
+            this.buttonCatDelete = new System.Windows.Forms.Button();
+            this.buttonCatEdit = new System.Windows.Forms.Button();
             this.buttonCatAdd = new System.Windows.Forms.Button();
             this.tbCatDesc = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.label3 = new System.Windows.Forms.Label();
@@ -129,8 +129,8 @@
             // 
             this.panel3.BackColor = System.Drawing.SystemColors.HotTrack;
             this.panel3.Controls.Add(this.gunaDataGridViewCat);
-            this.panel3.Controls.Add(this.button6);
-            this.panel3.Controls.Add(this.button5);
+            this.panel3.Controls.Add(this.buttonCatDelete);
+            this.panel3.Controls.Add(this.buttonCatEdit);
             this.panel3.Controls.Add(this.buttonCatAdd);
             this.panel3.Controls.Add(this.tbCatDesc);
             this.panel3.Controls.Add(this.label3);
@@ -155,26 +155,27 @@
             this.gunaDataGridViewCat.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft YaHei UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.gunaDataGridViewCat.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
-            this.gunaDataGridViewCat.ColumnHeadersHeight = 4;
+            this.gunaDataGridViewCat.ColumnHeadersHeight = 32;
             dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.gunaDataGridViewCat.DefaultCellStyle = dataGridViewCellStyle6;
             this.gunaDataGridViewCat.EnableHeadersVisualStyles = false;
-            this.gunaDataGridViewCat.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.gunaDataGridViewCat.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.gunaDataGridViewCat.Location = new System.Drawing.Point(448, 86);
             this.gunaDataGridViewCat.Name = "gunaDataGridViewCat";
             this.gunaDataGridViewCat.RowHeadersVisible = false;
+            this.gunaDataGridViewCat.RowTemplate.Height = 30;
             this.gunaDataGridViewCat.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.gunaDataGridViewCat.Size = new System.Drawing.Size(601, 443);
             this.gunaDataGridViewCat.TabIndex = 14;
@@ -185,50 +186,52 @@
             this.gunaDataGridViewCat.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
             this.gunaDataGridViewCat.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
             this.gunaDataGridViewCat.ThemeStyle.BackColor = System.Drawing.Color.White;
-            this.gunaDataGridViewCat.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.gunaDataGridViewCat.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.gunaDataGridViewCat.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.gunaDataGridViewCat.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.gunaDataGridViewCat.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            this.gunaDataGridViewCat.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Microsoft YaHei UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gunaDataGridViewCat.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
             this.gunaDataGridViewCat.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            this.gunaDataGridViewCat.ThemeStyle.HeaderStyle.Height = 4;
+            this.gunaDataGridViewCat.ThemeStyle.HeaderStyle.Height = 32;
             this.gunaDataGridViewCat.ThemeStyle.ReadOnly = false;
             this.gunaDataGridViewCat.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
             this.gunaDataGridViewCat.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.gunaDataGridViewCat.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            this.gunaDataGridViewCat.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            this.gunaDataGridViewCat.ThemeStyle.RowsStyle.Height = 22;
-            this.gunaDataGridViewCat.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.gunaDataGridViewCat.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.gunaDataGridViewCat.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gunaDataGridViewCat.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.Black;
+            this.gunaDataGridViewCat.ThemeStyle.RowsStyle.Height = 30;
+            this.gunaDataGridViewCat.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.gunaDataGridViewCat.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             this.gunaDataGridViewCat.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gunaDataGridViewCat_CellContentClick);
             // 
-            // button6
+            // buttonCatDelete
             // 
-            this.button6.BackColor = System.Drawing.Color.Red;
-            this.button6.FlatAppearance.BorderSize = 0;
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button6.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.button6.Location = new System.Drawing.Point(234, 332);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(90, 32);
-            this.button6.TabIndex = 13;
-            this.button6.Text = "Delete";
-            this.button6.UseVisualStyleBackColor = false;
+            this.buttonCatDelete.BackColor = System.Drawing.Color.Red;
+            this.buttonCatDelete.FlatAppearance.BorderSize = 0;
+            this.buttonCatDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonCatDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonCatDelete.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.buttonCatDelete.Location = new System.Drawing.Point(234, 332);
+            this.buttonCatDelete.Name = "buttonCatDelete";
+            this.buttonCatDelete.Size = new System.Drawing.Size(90, 32);
+            this.buttonCatDelete.TabIndex = 13;
+            this.buttonCatDelete.Text = "Delete";
+            this.buttonCatDelete.UseVisualStyleBackColor = false;
+            this.buttonCatDelete.Click += new System.EventHandler(this.buttonCatDelete_Click);
             // 
-            // button5
+            // buttonCatEdit
             // 
-            this.button5.BackColor = System.Drawing.SystemColors.Desktop;
-            this.button5.FlatAppearance.BorderSize = 0;
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.button5.Location = new System.Drawing.Point(127, 332);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(90, 32);
-            this.button5.TabIndex = 12;
-            this.button5.Text = "Edit";
-            this.button5.UseVisualStyleBackColor = false;
+            this.buttonCatEdit.BackColor = System.Drawing.SystemColors.Desktop;
+            this.buttonCatEdit.FlatAppearance.BorderSize = 0;
+            this.buttonCatEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonCatEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonCatEdit.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.buttonCatEdit.Location = new System.Drawing.Point(127, 332);
+            this.buttonCatEdit.Name = "buttonCatEdit";
+            this.buttonCatEdit.Size = new System.Drawing.Size(90, 32);
+            this.buttonCatEdit.TabIndex = 12;
+            this.buttonCatEdit.Text = "Edit";
+            this.buttonCatEdit.UseVisualStyleBackColor = false;
+            this.buttonCatEdit.Click += new System.EventHandler(this.buttonCatEdit_Click);
             // 
             // buttonCatAdd
             // 
@@ -363,8 +366,8 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Panel panel3;
         private Guna.UI.WinForms.GunaDataGridView gunaDataGridViewCat;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button buttonCatDelete;
+        private System.Windows.Forms.Button buttonCatEdit;
         private System.Windows.Forms.Button buttonCatAdd;
         private Bunifu.Framework.UI.BunifuMaterialTextbox tbCatDesc;
         private System.Windows.Forms.Label label3;
