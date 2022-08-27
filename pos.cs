@@ -7,64 +7,36 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Shoprite_Management_System.Database;
 using MySql.Data.MySqlClient;
+using Shoprite_Management_System.Database;
 
 namespace Shoprite_Management_System
 {
-    public partial class pos : Form
+    public partial class POS : Form
     {
-        DBconn DBconn = new DBconn();
-        public pos()
+        public POS()
         {
             InitializeComponent();
-            customDesign();
-            DBconn.connMain = new MySqlConnection(DBconn.Connection());
-            DBconn.connMain.Open();
-            //MessageBox.Show("DB is Up");
-            
         }
 
-        // START - PANELLEFTSIDE
-        private void customDesign()
+        MySqlConnection conn = new MySqlConnection(DBconn.Connection());
+        string query = "";
+        MySqlCommand cmd;
+        MySqlDataReader reader;
+
+        private void populate()
         {
-            panelSubProduct.Visible = false;
-            panelSubRecord.Visible = false;
-            panelSubSettings.Visible = false;
-            panelSubStock.Visible = false;
+            conn.Open();
+            string query = $"SELECT `barcode`, `name`, `quantity`, `price` FROM `product`";
+            MySqlDataAdapter adapter = new MySqlDataAdapter(query, conn);
+            MySqlCommandBuilder builder = new MySqlCommandBuilder(adapter);
+            var dataSet = new DataSet();
+            adapter.Fill(dataSet);
+            gunaDataGridViewProd.DataSource = dataSet.Tables[0];
+            conn.Close();
         }
 
-        private void hideSubmenu()
-        {
-            if (panelSubProduct.Visible == true)
-                panelSubProduct.Visible = false;
-            if (panelSubRecord.Visible == true)
-                panelSubRecord.Visible = false;
-            if (panelSubSettings.Visible == true)
-                panelSubSettings.Visible = false;
-            if (panelSubStock.Visible == true)
-                panelSubStock.Visible = false;
-        }
-
-        private void showSubmenu(Panel target)
-        {
-            if (target.Visible == false)
-            {
-                hideSubmenu();
-                target.Visible = true;
-            } else
-            {
-                target.Visible = false;
-            }
-        }
-        //  END - PANELLEFTSIDE
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panelLeftSide_Paint(object sender, PaintEventArgs e)
+        private void labelManageCategories_Click(object sender, EventArgs e)
         {
 
         }
@@ -79,44 +51,87 @@ namespace Shoprite_Management_System
 
         }
 
-        private void buttonProduct_Click(object sender, EventArgs e)
+        private void POS_Load(object sender, EventArgs e)
         {
-            showSubmenu(panelSubProduct);
+            populate();
         }
 
-        private void buttonStock_Click(object sender, EventArgs e)
+        private void panel1_Paint(object sender, PaintEventArgs e)
         {
-            showSubmenu(panelSubStock);
+            labelDate.Text = DateTime.Today.Year.ToString() + "-" + DateTime.Today.Month.ToString() + "-" + DateTime.Today.Day.ToString();
         }
 
-        private void buttonRecord_Click(object sender, EventArgs e)
+        // Radom String Generator
+
+        private void buttonCatAdd_Click(object sender, EventArgs e)
         {
-            showSubmenu(panelSubRecord);
+            Decimal subTotal = Decimal.Parse(tbPrice.Text) * Decimal.Parse(tbQty.Text), overallTotal = 0;
+
+
+            if (tbProdName.Text == "" || tbBarcode.Text == "" || tbPrice.Text=="" || tbQty.Text == "" )
+            {
+                MessageBox.Show("Please ensure to enter all details");
+            }
+            DataGridViewRow row = new DataGridViewRow();
+            row.CreateCells(gunaDataGridViewOrder);
+            row.Cells[0].Value = tbBarcode.Text;
+            row.Cells[1].Value = tbProdName.Text;
+            row.Cells[2].Value = tbQty.Text;
+            row.Cells[3].Value = tbPrice.Text;//Convert.ToInt32(tbPrice.Text) * Convert.ToInt32(tbQty.Text);
+            row.Cells[4].Value = subTotal;
+
+            gunaDataGridViewOrder.Rows.Add(row);
+            //overallTotal += subTotal;
         }
 
-        private void buttonSettings_Click(object sender, EventArgs e)
+        private void buttonSearch_Click(object sender, EventArgs e)
         {
-            showSubmenu(panelSubSettings);
+            if (labelBarcode.Text == "" || labelBarcode.Text == " " )
+            {
+                MessageBox.Show("Please Enter a valid Barcode");
+            } else
+            {
+                try
+                {
+                    query = $"SELECT * FROM `product` WHERE `barcode` = '{tbBarcode.Text}'";
+                    conn.Open();
+                    cmd = new MySqlCommand(query, conn);
+                    reader = cmd.ExecuteReader();
+                    string[] rw = new string[] {};
+
+                    if (reader.HasRows)
+                    {
+                        while (reader.Read())
+                        {
+                            string[] row = {reader.GetString(0), reader.GetString(1), reader.GetString(2), reader.GetString(3), reader.GetString(4)};
+                            rw = row;
+                        }
+                        
+                        conn.Close();
+                    }else
+                    {
+                        MessageBox.Show("Sorry no such product exists");
+                        conn.Close();
+                    }
+                    tbBarcode.Text = rw[0];
+                    tbProdName.Text = rw[1];
+                    tbQty.Text = rw[2];
+                    tbPrice.Text = rw[3];
+                } catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                    conn.Close();
+                }
+            }
         }
 
-        private void buttonDashboard_Click(object sender, EventArgs e)
+        private void gunaDataGridViewProd_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            hideSubmenu();
-        }
-
-        private void buttonSupplier_Click(object sender, EventArgs e)
-        {
-            hideSubmenu();
-        }
-
-        private void buttonLogout_Click(object sender, EventArgs e)
-        {
-            hideSubmenu();
-        }
-
-        private void labelTitle_Click(object sender, EventArgs e)
-        {
-
+            tbBarcode.Text = gunaDataGridViewProd.SelectedRows[0].Cells[0].Value.ToString();
+            tbProdName.Text = gunaDataGridViewProd.SelectedRows[0].Cells[1].Value.ToString();
+            //tbQty.Text = gunaDataGridViewProd.SelectedRows[0].Cells[2].Value.ToString();
+            tbPrice.Text = gunaDataGridViewProd.SelectedRows[0].Cells[3].Value.ToString();
+            //comboBoxCatRole.SelectedValue = gunaDataGridViewProd.SelectedRows[0].Cells[4].Value.ToString();
         }
     }
 }

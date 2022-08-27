@@ -46,5 +46,46 @@ namespace Shoprite_Management_System
         {
 
         }
+
+        private void buttonLogin_Click(object sender, EventArgs e)
+        {
+            if (textBoxUsername.Text == "" || textBoxPassword.Text == "")
+            {
+                MessageBox.Show("Enter The Username and Password");
+            } else
+            {
+                if (comboBoxRole.SelectedIndex > -1)
+                {
+                    if (comboBoxRole.SelectedItem.ToString() == "ADMIN")
+                    {
+                        if (textBoxUsername.Text == "ADMIN" && textBoxPassword.Text == "ADMIN123")
+                        {
+                            Product product = new Product();
+                            product.Show();
+                            this.Hide();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Please enter correct  admin details");
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Seller");
+                    }
+                    
+                }
+                else
+                {
+                    MessageBox.Show("Role");
+                }
+            }
+        }
+
+        private void buttonClear_Click(object sender, EventArgs e)
+        {
+            textBoxUsername.Text = "";
+            textBoxPassword.Text = "";
+        }
     }
 }

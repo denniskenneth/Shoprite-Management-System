@@ -1,6 +1,6 @@
 ﻿namespace Shoprite_Management_System
 {
-    partial class pos
+    partial class POS
     {
         /// <summary>
         /// Required designer variable.
@@ -28,524 +28,544 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panelLogo = new System.Windows.Forms.Panel();
-            this.labelName = new System.Windows.Forms.Label();
-            this.labelUsername = new System.Windows.Forms.Label();
-            this.labelAdministrator = new System.Windows.Forms.Label();
-            this.panelLeftSide = new System.Windows.Forms.FlowLayoutPanel();
-            this.buttonDashboard = new System.Windows.Forms.Button();
-            this.buttonProduct = new System.Windows.Forms.Button();
-            this.panelSubProduct = new System.Windows.Forms.Panel();
-            this.buttonBrand = new System.Windows.Forms.Button();
-            this.buttonCategory = new System.Windows.Forms.Button();
-            this.buttonProductList = new System.Windows.Forms.Button();
-            this.buttonStock = new System.Windows.Forms.Button();
-            this.panelSubStock = new System.Windows.Forms.Panel();
-            this.buttonStockAdj = new System.Windows.Forms.Button();
-            this.buttonStockEntry = new System.Windows.Forms.Button();
-            this.buttonSupplier = new System.Windows.Forms.Button();
-            this.buttonRecord = new System.Windows.Forms.Button();
-            this.panelSubRecord = new System.Windows.Forms.Panel();
-            this.buttonSalesRecord = new System.Windows.Forms.Button();
-            this.buttonSalesHistory = new System.Windows.Forms.Button();
-            this.buttonSettings = new System.Windows.Forms.Button();
-            this.panelSubSettings = new System.Windows.Forms.Panel();
-            this.buttonStore = new System.Windows.Forms.Button();
-            this.buttonUser = new System.Windows.Forms.Button();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.gunaDataGridViewOrder = new Guna.UI.WinForms.GunaDataGridView();
+            this.buttonSearch = new System.Windows.Forms.Button();
+            this.buttonAddProduct = new System.Windows.Forms.Button();
+            this.tbProdName = new Bunifu.Framework.UI.BunifuMaterialTextbox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.tbBarcode = new Bunifu.Framework.UI.BunifuMaterialTextbox();
+            this.labelBarcode = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.buttonLogout = new System.Windows.Forms.Button();
-            this.panelTitle = new System.Windows.Forms.Panel();
-            this.labelTitle = new System.Windows.Forms.Label();
-            this.panelMain = new System.Windows.Forms.Panel();
-            this.panelLogo.SuspendLayout();
-            this.panelLeftSide.SuspendLayout();
-            this.panelSubProduct.SuspendLayout();
-            this.panelSubStock.SuspendLayout();
-            this.panelSubRecord.SuspendLayout();
-            this.panelSubSettings.SuspendLayout();
-            this.panelTitle.SuspendLayout();
+            this.buttonProd = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.labelManageCategories = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.labelCashName = new System.Windows.Forms.Label();
+            this.labelDate = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.tbPrice = new Bunifu.Framework.UI.BunifuMaterialTextbox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.tbQty = new Bunifu.Framework.UI.BunifuMaterialTextbox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.gunaDataGridViewProd = new Guna.UI.WinForms.GunaDataGridView();
+            this.PBarcode = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PQuantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PSubtotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gunaDataGridViewOrder)).BeginInit();
+            this.panel2.SuspendLayout();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gunaDataGridViewProd)).BeginInit();
             this.SuspendLayout();
             // 
-            // panelLogo
+            // panel3
             // 
-            this.panelLogo.Controls.Add(this.labelName);
-            this.panelLogo.Controls.Add(this.labelUsername);
-            this.panelLogo.Controls.Add(this.labelAdministrator);
-            this.panelLogo.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelLogo.Location = new System.Drawing.Point(2, 2);
-            this.panelLogo.Margin = new System.Windows.Forms.Padding(2);
-            this.panelLogo.Name = "panelLogo";
-            this.panelLogo.Size = new System.Drawing.Size(201, 124);
-            this.panelLogo.TabIndex = 0;
+            this.panel3.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.panel3.Controls.Add(this.label5);
+            this.panel3.Controls.Add(this.label7);
+            this.panel3.Controls.Add(this.gunaDataGridViewProd);
+            this.panel3.Controls.Add(this.tbPrice);
+            this.panel3.Controls.Add(this.label2);
+            this.panel3.Controls.Add(this.tbQty);
+            this.panel3.Controls.Add(this.label3);
+            this.panel3.Controls.Add(this.gunaDataGridViewOrder);
+            this.panel3.Controls.Add(this.buttonSearch);
+            this.panel3.Controls.Add(this.buttonAddProduct);
+            this.panel3.Controls.Add(this.tbProdName);
+            this.panel3.Controls.Add(this.label6);
+            this.panel3.Controls.Add(this.tbBarcode);
+            this.panel3.Controls.Add(this.labelBarcode);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel3.Location = new System.Drawing.Point(108, 59);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(1076, 602);
+            this.panel3.TabIndex = 10;
             // 
-            // labelName
+            // gunaDataGridViewOrder
             // 
-            this.labelName.AutoSize = true;
-            this.labelName.Font = new System.Drawing.Font("Microsoft YaHei UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelName.Location = new System.Drawing.Point(32, 13);
-            this.labelName.Name = "labelName";
-            this.labelName.Size = new System.Drawing.Size(67, 25);
-            this.labelName.TabIndex = 2;
-            this.labelName.Text = "Name";
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.White;
+            this.gunaDataGridViewOrder.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle10;
+            this.gunaDataGridViewOrder.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.gunaDataGridViewOrder.BackgroundColor = System.Drawing.Color.White;
+            this.gunaDataGridViewOrder.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.gunaDataGridViewOrder.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.gunaDataGridViewOrder.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft YaHei UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gunaDataGridViewOrder.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
+            this.gunaDataGridViewOrder.ColumnHeadersHeight = 32;
+            this.gunaDataGridViewOrder.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.PBarcode,
+            this.PName,
+            this.PQuantity,
+            this.PPrice,
+            this.PSubtotal});
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.gunaDataGridViewOrder.DefaultCellStyle = dataGridViewCellStyle12;
+            this.gunaDataGridViewOrder.EnableHeadersVisualStyles = false;
+            this.gunaDataGridViewOrder.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.gunaDataGridViewOrder.Location = new System.Drawing.Point(451, 18);
+            this.gunaDataGridViewOrder.Name = "gunaDataGridViewOrder";
+            this.gunaDataGridViewOrder.RowHeadersVisible = false;
+            this.gunaDataGridViewOrder.RowTemplate.Height = 30;
+            this.gunaDataGridViewOrder.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.gunaDataGridViewOrder.Size = new System.Drawing.Size(601, 229);
+            this.gunaDataGridViewOrder.TabIndex = 14;
+            this.gunaDataGridViewOrder.Theme = Guna.UI.WinForms.GunaDataGridViewPresetThemes.Guna;
+            this.gunaDataGridViewOrder.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
+            this.gunaDataGridViewOrder.ThemeStyle.AlternatingRowsStyle.Font = null;
+            this.gunaDataGridViewOrder.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
+            this.gunaDataGridViewOrder.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
+            this.gunaDataGridViewOrder.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
+            this.gunaDataGridViewOrder.ThemeStyle.BackColor = System.Drawing.Color.White;
+            this.gunaDataGridViewOrder.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.gunaDataGridViewOrder.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.gunaDataGridViewOrder.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.gunaDataGridViewOrder.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Microsoft YaHei UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gunaDataGridViewOrder.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
+            this.gunaDataGridViewOrder.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            this.gunaDataGridViewOrder.ThemeStyle.HeaderStyle.Height = 32;
+            this.gunaDataGridViewOrder.ThemeStyle.ReadOnly = false;
+            this.gunaDataGridViewOrder.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
+            this.gunaDataGridViewOrder.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.gunaDataGridViewOrder.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gunaDataGridViewOrder.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.Black;
+            this.gunaDataGridViewOrder.ThemeStyle.RowsStyle.Height = 30;
+            this.gunaDataGridViewOrder.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.gunaDataGridViewOrder.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             // 
-            // labelUsername
+            // buttonSearch
             // 
-            this.labelUsername.AutoSize = true;
-            this.labelUsername.Font = new System.Drawing.Font("Microsoft YaHei UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelUsername.Location = new System.Drawing.Point(32, 49);
-            this.labelUsername.Name = "labelUsername";
-            this.labelUsername.Size = new System.Drawing.Size(105, 25);
-            this.labelUsername.TabIndex = 1;
-            this.labelUsername.Text = "Username";
-            this.labelUsername.Click += new System.EventHandler(this.label2_Click);
+            this.buttonSearch.BackColor = System.Drawing.SystemColors.Desktop;
+            this.buttonSearch.FlatAppearance.BorderSize = 0;
+            this.buttonSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonSearch.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.buttonSearch.Location = new System.Drawing.Point(189, 272);
+            this.buttonSearch.Name = "buttonSearch";
+            this.buttonSearch.Size = new System.Drawing.Size(150, 30);
+            this.buttonSearch.TabIndex = 12;
+            this.buttonSearch.Text = "Search Product";
+            this.buttonSearch.UseVisualStyleBackColor = false;
+            this.buttonSearch.Click += new System.EventHandler(this.buttonSearch_Click);
             // 
-            // labelAdministrator
+            // buttonAddProduct
             // 
-            this.labelAdministrator.AutoSize = true;
-            this.labelAdministrator.Font = new System.Drawing.Font("Microsoft YaHei UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelAdministrator.Location = new System.Drawing.Point(22, 86);
-            this.labelAdministrator.Name = "labelAdministrator";
-            this.labelAdministrator.Size = new System.Drawing.Size(132, 25);
-            this.labelAdministrator.TabIndex = 0;
-            this.labelAdministrator.Text = "Adminstrator";
-            this.labelAdministrator.Click += new System.EventHandler(this.label1_Click);
+            this.buttonAddProduct.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.buttonAddProduct.FlatAppearance.BorderSize = 0;
+            this.buttonAddProduct.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonAddProduct.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonAddProduct.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.buttonAddProduct.Location = new System.Drawing.Point(22, 272);
+            this.buttonAddProduct.Name = "buttonAddProduct";
+            this.buttonAddProduct.Size = new System.Drawing.Size(150, 30);
+            this.buttonAddProduct.TabIndex = 11;
+            this.buttonAddProduct.Text = "Add Product";
+            this.buttonAddProduct.UseVisualStyleBackColor = false;
+            this.buttonAddProduct.Click += new System.EventHandler(this.buttonCatAdd_Click);
             // 
-            // panelLeftSide
+            // tbProdName
             // 
-            this.panelLeftSide.AutoScroll = true;
-            this.panelLeftSide.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panelLeftSide.Controls.Add(this.panelLogo);
-            this.panelLeftSide.Controls.Add(this.buttonDashboard);
-            this.panelLeftSide.Controls.Add(this.buttonProduct);
-            this.panelLeftSide.Controls.Add(this.panelSubProduct);
-            this.panelLeftSide.Controls.Add(this.buttonStock);
-            this.panelLeftSide.Controls.Add(this.panelSubStock);
-            this.panelLeftSide.Controls.Add(this.buttonSupplier);
-            this.panelLeftSide.Controls.Add(this.buttonRecord);
-            this.panelLeftSide.Controls.Add(this.panelSubRecord);
-            this.panelLeftSide.Controls.Add(this.buttonSettings);
-            this.panelLeftSide.Controls.Add(this.panelSubSettings);
-            this.panelLeftSide.Controls.Add(this.panel2);
-            this.panelLeftSide.Controls.Add(this.buttonLogout);
-            this.panelLeftSide.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panelLeftSide.Location = new System.Drawing.Point(0, 0);
-            this.panelLeftSide.Margin = new System.Windows.Forms.Padding(2);
-            this.panelLeftSide.Name = "panelLeftSide";
-            this.panelLeftSide.Size = new System.Drawing.Size(225, 661);
-            this.panelLeftSide.TabIndex = 0;
-            this.panelLeftSide.Paint += new System.Windows.Forms.PaintEventHandler(this.panelLeftSide_Paint);
+            this.tbProdName.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.tbProdName.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.tbProdName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.tbProdName.HintForeColor = System.Drawing.Color.Empty;
+            this.tbProdName.HintText = "";
+            this.tbProdName.isPassword = false;
+            this.tbProdName.LineFocusedColor = System.Drawing.Color.Black;
+            this.tbProdName.LineIdleColor = System.Drawing.Color.White;
+            this.tbProdName.LineMouseHoverColor = System.Drawing.Color.Black;
+            this.tbProdName.LineThickness = 3;
+            this.tbProdName.Location = new System.Drawing.Point(146, 103);
+            this.tbProdName.Margin = new System.Windows.Forms.Padding(4);
+            this.tbProdName.Name = "tbProdName";
+            this.tbProdName.Size = new System.Drawing.Size(193, 31);
+            this.tbProdName.TabIndex = 4;
+            this.tbProdName.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
-            // buttonDashboard
+            // label6
             // 
-            this.buttonDashboard.Dock = System.Windows.Forms.DockStyle.Top;
-            this.buttonDashboard.FlatAppearance.BorderSize = 0;
-            this.buttonDashboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonDashboard.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonDashboard.ForeColor = System.Drawing.Color.Black;
-            this.buttonDashboard.Location = new System.Drawing.Point(3, 131);
-            this.buttonDashboard.Name = "buttonDashboard";
-            this.buttonDashboard.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.buttonDashboard.Size = new System.Drawing.Size(194, 45);
-            this.buttonDashboard.TabIndex = 0;
-            this.buttonDashboard.Text = "Dashboard";
-            this.buttonDashboard.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonDashboard.UseVisualStyleBackColor = true;
-            this.buttonDashboard.Click += new System.EventHandler(this.buttonDashboard_Click);
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(18, 113);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(121, 21);
+            this.label6.TabIndex = 3;
+            this.label6.Text = "Product Name";
             // 
-            // buttonProduct
+            // tbBarcode
             // 
-            this.buttonProduct.Dock = System.Windows.Forms.DockStyle.Top;
-            this.buttonProduct.FlatAppearance.BorderSize = 0;
-            this.buttonProduct.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonProduct.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonProduct.ForeColor = System.Drawing.Color.Black;
-            this.buttonProduct.Location = new System.Drawing.Point(3, 182);
-            this.buttonProduct.Name = "buttonProduct";
-            this.buttonProduct.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.buttonProduct.Size = new System.Drawing.Size(194, 45);
-            this.buttonProduct.TabIndex = 1;
-            this.buttonProduct.Text = "Product";
-            this.buttonProduct.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonProduct.UseVisualStyleBackColor = true;
-            this.buttonProduct.Click += new System.EventHandler(this.buttonProduct_Click);
+            this.tbBarcode.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.tbBarcode.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.tbBarcode.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.tbBarcode.HintForeColor = System.Drawing.Color.Empty;
+            this.tbBarcode.HintText = "";
+            this.tbBarcode.isPassword = false;
+            this.tbBarcode.LineFocusedColor = System.Drawing.Color.Black;
+            this.tbBarcode.LineIdleColor = System.Drawing.Color.White;
+            this.tbBarcode.LineMouseHoverColor = System.Drawing.Color.Black;
+            this.tbBarcode.LineThickness = 3;
+            this.tbBarcode.Location = new System.Drawing.Point(146, 52);
+            this.tbBarcode.Margin = new System.Windows.Forms.Padding(4);
+            this.tbBarcode.Name = "tbBarcode";
+            this.tbBarcode.Size = new System.Drawing.Size(193, 31);
+            this.tbBarcode.TabIndex = 2;
+            this.tbBarcode.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
-            // panelSubProduct
+            // labelBarcode
             // 
-            this.panelSubProduct.Controls.Add(this.buttonBrand);
-            this.panelSubProduct.Controls.Add(this.buttonCategory);
-            this.panelSubProduct.Controls.Add(this.buttonProductList);
-            this.panelSubProduct.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelSubProduct.Location = new System.Drawing.Point(3, 233);
-            this.panelSubProduct.Name = "panelSubProduct";
-            this.panelSubProduct.Size = new System.Drawing.Size(200, 136);
-            this.panelSubProduct.TabIndex = 0;
-            // 
-            // buttonBrand
-            // 
-            this.buttonBrand.BackColor = System.Drawing.SystemColors.InfoText;
-            this.buttonBrand.Dock = System.Windows.Forms.DockStyle.Top;
-            this.buttonBrand.FlatAppearance.BorderSize = 0;
-            this.buttonBrand.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonBrand.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonBrand.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.buttonBrand.Location = new System.Drawing.Point(0, 90);
-            this.buttonBrand.Name = "buttonBrand";
-            this.buttonBrand.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.buttonBrand.Size = new System.Drawing.Size(200, 45);
-            this.buttonBrand.TabIndex = 4;
-            this.buttonBrand.Text = "Brand";
-            this.buttonBrand.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonBrand.UseVisualStyleBackColor = false;
-            // 
-            // buttonCategory
-            // 
-            this.buttonCategory.BackColor = System.Drawing.SystemColors.InfoText;
-            this.buttonCategory.Dock = System.Windows.Forms.DockStyle.Top;
-            this.buttonCategory.FlatAppearance.BorderSize = 0;
-            this.buttonCategory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonCategory.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonCategory.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.buttonCategory.Location = new System.Drawing.Point(0, 45);
-            this.buttonCategory.Name = "buttonCategory";
-            this.buttonCategory.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.buttonCategory.Size = new System.Drawing.Size(200, 45);
-            this.buttonCategory.TabIndex = 3;
-            this.buttonCategory.Text = "Category";
-            this.buttonCategory.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonCategory.UseVisualStyleBackColor = false;
-            // 
-            // buttonProductList
-            // 
-            this.buttonProductList.BackColor = System.Drawing.SystemColors.InfoText;
-            this.buttonProductList.Dock = System.Windows.Forms.DockStyle.Top;
-            this.buttonProductList.FlatAppearance.BorderSize = 0;
-            this.buttonProductList.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonProductList.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonProductList.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.buttonProductList.Location = new System.Drawing.Point(0, 0);
-            this.buttonProductList.Name = "buttonProductList";
-            this.buttonProductList.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.buttonProductList.Size = new System.Drawing.Size(200, 45);
-            this.buttonProductList.TabIndex = 2;
-            this.buttonProductList.Text = "Product List";
-            this.buttonProductList.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonProductList.UseVisualStyleBackColor = false;
-            // 
-            // buttonStock
-            // 
-            this.buttonStock.Dock = System.Windows.Forms.DockStyle.Top;
-            this.buttonStock.FlatAppearance.BorderSize = 0;
-            this.buttonStock.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonStock.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonStock.ForeColor = System.Drawing.Color.Black;
-            this.buttonStock.Location = new System.Drawing.Point(3, 375);
-            this.buttonStock.Name = "buttonStock";
-            this.buttonStock.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.buttonStock.Size = new System.Drawing.Size(194, 45);
-            this.buttonStock.TabIndex = 2;
-            this.buttonStock.Text = "Stock";
-            this.buttonStock.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonStock.UseVisualStyleBackColor = true;
-            this.buttonStock.Click += new System.EventHandler(this.buttonStock_Click);
-            // 
-            // panelSubStock
-            // 
-            this.panelSubStock.Controls.Add(this.buttonStockAdj);
-            this.panelSubStock.Controls.Add(this.buttonStockEntry);
-            this.panelSubStock.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelSubStock.Location = new System.Drawing.Point(3, 426);
-            this.panelSubStock.Name = "panelSubStock";
-            this.panelSubStock.Size = new System.Drawing.Size(200, 92);
-            this.panelSubStock.TabIndex = 3;
-            // 
-            // buttonStockAdj
-            // 
-            this.buttonStockAdj.BackColor = System.Drawing.SystemColors.InfoText;
-            this.buttonStockAdj.Dock = System.Windows.Forms.DockStyle.Top;
-            this.buttonStockAdj.FlatAppearance.BorderSize = 0;
-            this.buttonStockAdj.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonStockAdj.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonStockAdj.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.buttonStockAdj.Location = new System.Drawing.Point(0, 45);
-            this.buttonStockAdj.Name = "buttonStockAdj";
-            this.buttonStockAdj.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.buttonStockAdj.Size = new System.Drawing.Size(200, 45);
-            this.buttonStockAdj.TabIndex = 3;
-            this.buttonStockAdj.Text = "Stock Adjustment";
-            this.buttonStockAdj.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonStockAdj.UseVisualStyleBackColor = false;
-            // 
-            // buttonStockEntry
-            // 
-            this.buttonStockEntry.BackColor = System.Drawing.SystemColors.InfoText;
-            this.buttonStockEntry.Dock = System.Windows.Forms.DockStyle.Top;
-            this.buttonStockEntry.FlatAppearance.BorderSize = 0;
-            this.buttonStockEntry.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonStockEntry.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonStockEntry.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.buttonStockEntry.Location = new System.Drawing.Point(0, 0);
-            this.buttonStockEntry.Name = "buttonStockEntry";
-            this.buttonStockEntry.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.buttonStockEntry.Size = new System.Drawing.Size(200, 45);
-            this.buttonStockEntry.TabIndex = 2;
-            this.buttonStockEntry.Text = "Stock Entry";
-            this.buttonStockEntry.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonStockEntry.UseVisualStyleBackColor = false;
-            this.buttonStockEntry.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // buttonSupplier
-            // 
-            this.buttonSupplier.Dock = System.Windows.Forms.DockStyle.Top;
-            this.buttonSupplier.FlatAppearance.BorderSize = 0;
-            this.buttonSupplier.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonSupplier.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonSupplier.ForeColor = System.Drawing.Color.Black;
-            this.buttonSupplier.Location = new System.Drawing.Point(3, 524);
-            this.buttonSupplier.Name = "buttonSupplier";
-            this.buttonSupplier.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.buttonSupplier.Size = new System.Drawing.Size(194, 45);
-            this.buttonSupplier.TabIndex = 4;
-            this.buttonSupplier.Text = "Supplier";
-            this.buttonSupplier.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonSupplier.UseVisualStyleBackColor = true;
-            this.buttonSupplier.Click += new System.EventHandler(this.buttonSupplier_Click);
-            // 
-            // buttonRecord
-            // 
-            this.buttonRecord.Dock = System.Windows.Forms.DockStyle.Top;
-            this.buttonRecord.FlatAppearance.BorderSize = 0;
-            this.buttonRecord.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonRecord.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonRecord.ForeColor = System.Drawing.Color.Black;
-            this.buttonRecord.Location = new System.Drawing.Point(3, 575);
-            this.buttonRecord.Name = "buttonRecord";
-            this.buttonRecord.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.buttonRecord.Size = new System.Drawing.Size(194, 45);
-            this.buttonRecord.TabIndex = 5;
-            this.buttonRecord.Text = "Record";
-            this.buttonRecord.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonRecord.UseVisualStyleBackColor = true;
-            this.buttonRecord.Click += new System.EventHandler(this.buttonRecord_Click);
-            // 
-            // panelSubRecord
-            // 
-            this.panelSubRecord.Controls.Add(this.buttonSalesRecord);
-            this.panelSubRecord.Controls.Add(this.buttonSalesHistory);
-            this.panelSubRecord.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelSubRecord.Location = new System.Drawing.Point(3, 626);
-            this.panelSubRecord.Name = "panelSubRecord";
-            this.panelSubRecord.Size = new System.Drawing.Size(200, 92);
-            this.panelSubRecord.TabIndex = 6;
-            // 
-            // buttonSalesRecord
-            // 
-            this.buttonSalesRecord.BackColor = System.Drawing.SystemColors.InfoText;
-            this.buttonSalesRecord.Dock = System.Windows.Forms.DockStyle.Top;
-            this.buttonSalesRecord.FlatAppearance.BorderSize = 0;
-            this.buttonSalesRecord.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonSalesRecord.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonSalesRecord.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.buttonSalesRecord.Location = new System.Drawing.Point(0, 45);
-            this.buttonSalesRecord.Name = "buttonSalesRecord";
-            this.buttonSalesRecord.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.buttonSalesRecord.Size = new System.Drawing.Size(200, 45);
-            this.buttonSalesRecord.TabIndex = 3;
-            this.buttonSalesRecord.Text = "Sales Record";
-            this.buttonSalesRecord.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonSalesRecord.UseVisualStyleBackColor = false;
-            // 
-            // buttonSalesHistory
-            // 
-            this.buttonSalesHistory.BackColor = System.Drawing.SystemColors.InfoText;
-            this.buttonSalesHistory.Dock = System.Windows.Forms.DockStyle.Top;
-            this.buttonSalesHistory.FlatAppearance.BorderSize = 0;
-            this.buttonSalesHistory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonSalesHistory.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonSalesHistory.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.buttonSalesHistory.Location = new System.Drawing.Point(0, 0);
-            this.buttonSalesHistory.Name = "buttonSalesHistory";
-            this.buttonSalesHistory.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.buttonSalesHistory.Size = new System.Drawing.Size(200, 45);
-            this.buttonSalesHistory.TabIndex = 2;
-            this.buttonSalesHistory.Text = "Sales History";
-            this.buttonSalesHistory.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonSalesHistory.UseVisualStyleBackColor = false;
-            // 
-            // buttonSettings
-            // 
-            this.buttonSettings.Dock = System.Windows.Forms.DockStyle.Top;
-            this.buttonSettings.FlatAppearance.BorderSize = 0;
-            this.buttonSettings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonSettings.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonSettings.ForeColor = System.Drawing.Color.Black;
-            this.buttonSettings.Location = new System.Drawing.Point(3, 724);
-            this.buttonSettings.Name = "buttonSettings";
-            this.buttonSettings.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.buttonSettings.Size = new System.Drawing.Size(194, 45);
-            this.buttonSettings.TabIndex = 7;
-            this.buttonSettings.Text = "Settings";
-            this.buttonSettings.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonSettings.UseVisualStyleBackColor = true;
-            this.buttonSettings.Click += new System.EventHandler(this.buttonSettings_Click);
-            // 
-            // panelSubSettings
-            // 
-            this.panelSubSettings.Controls.Add(this.buttonStore);
-            this.panelSubSettings.Controls.Add(this.buttonUser);
-            this.panelSubSettings.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelSubSettings.Location = new System.Drawing.Point(3, 775);
-            this.panelSubSettings.Name = "panelSubSettings";
-            this.panelSubSettings.Size = new System.Drawing.Size(200, 92);
-            this.panelSubSettings.TabIndex = 8;
-            // 
-            // buttonStore
-            // 
-            this.buttonStore.BackColor = System.Drawing.SystemColors.InfoText;
-            this.buttonStore.Dock = System.Windows.Forms.DockStyle.Top;
-            this.buttonStore.FlatAppearance.BorderSize = 0;
-            this.buttonStore.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonStore.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonStore.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.buttonStore.Location = new System.Drawing.Point(0, 45);
-            this.buttonStore.Name = "buttonStore";
-            this.buttonStore.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.buttonStore.Size = new System.Drawing.Size(200, 45);
-            this.buttonStore.TabIndex = 3;
-            this.buttonStore.Text = "Store";
-            this.buttonStore.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonStore.UseVisualStyleBackColor = false;
-            // 
-            // buttonUser
-            // 
-            this.buttonUser.BackColor = System.Drawing.SystemColors.InfoText;
-            this.buttonUser.Dock = System.Windows.Forms.DockStyle.Top;
-            this.buttonUser.FlatAppearance.BorderSize = 0;
-            this.buttonUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonUser.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonUser.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.buttonUser.Location = new System.Drawing.Point(0, 0);
-            this.buttonUser.Name = "buttonUser";
-            this.buttonUser.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.buttonUser.Size = new System.Drawing.Size(200, 45);
-            this.buttonUser.TabIndex = 2;
-            this.buttonUser.Text = "User";
-            this.buttonUser.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonUser.UseVisualStyleBackColor = false;
+            this.labelBarcode.AutoSize = true;
+            this.labelBarcode.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelBarcode.Location = new System.Drawing.Point(18, 62);
+            this.labelBarcode.Name = "labelBarcode";
+            this.labelBarcode.Size = new System.Drawing.Size(72, 21);
+            this.labelBarcode.TabIndex = 1;
+            this.labelBarcode.Text = "Barcode";
             // 
             // panel2
             // 
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(3, 873);
+            this.panel2.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.panel2.Controls.Add(this.buttonLogout);
+            this.panel2.Controls.Add(this.buttonProd);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel2.Location = new System.Drawing.Point(0, 59);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(148, 0);
-            this.panel2.TabIndex = 4;
+            this.panel2.Size = new System.Drawing.Size(108, 602);
+            this.panel2.TabIndex = 9;
             // 
             // buttonLogout
             // 
-            this.buttonLogout.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.buttonLogout.BackColor = System.Drawing.SystemColors.HotTrack;
             this.buttonLogout.FlatAppearance.BorderSize = 0;
             this.buttonLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonLogout.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonLogout.ForeColor = System.Drawing.Color.Black;
-            this.buttonLogout.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.buttonLogout.Location = new System.Drawing.Point(3, 879);
+            this.buttonLogout.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonLogout.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.buttonLogout.Location = new System.Drawing.Point(12, 558);
             this.buttonLogout.Name = "buttonLogout";
-            this.buttonLogout.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.buttonLogout.Size = new System.Drawing.Size(194, 45);
-            this.buttonLogout.TabIndex = 9;
+            this.buttonLogout.Size = new System.Drawing.Size(77, 32);
+            this.buttonLogout.TabIndex = 1;
             this.buttonLogout.Text = "Logout";
-            this.buttonLogout.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonLogout.UseVisualStyleBackColor = true;
-            this.buttonLogout.Click += new System.EventHandler(this.buttonLogout_Click);
+            this.buttonLogout.UseVisualStyleBackColor = false;
             // 
-            // panelTitle
+            // buttonProd
             // 
-            this.panelTitle.Controls.Add(this.labelTitle);
-            this.panelTitle.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelTitle.Location = new System.Drawing.Point(225, 0);
-            this.panelTitle.Margin = new System.Windows.Forms.Padding(2);
-            this.panelTitle.Name = "panelTitle";
-            this.panelTitle.Size = new System.Drawing.Size(959, 56);
-            this.panelTitle.TabIndex = 1;
+            this.buttonProd.FlatAppearance.BorderSize = 0;
+            this.buttonProd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonProd.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonProd.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.buttonProd.Location = new System.Drawing.Point(12, 189);
+            this.buttonProd.Name = "buttonProd";
+            this.buttonProd.Size = new System.Drawing.Size(0, 0);
+            this.buttonProd.TabIndex = 0;
+            this.buttonProd.Text = "Product";
+            this.buttonProd.UseVisualStyleBackColor = true;
             // 
-            // labelTitle
+            // panel1
             // 
-            this.labelTitle.Font = new System.Drawing.Font("Microsoft YaHei UI", 14.14286F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTitle.Location = new System.Drawing.Point(0, 9);
-            this.labelTitle.Name = "labelTitle";
-            this.labelTitle.Size = new System.Drawing.Size(959, 37);
-            this.labelTitle.TabIndex = 2;
-            this.labelTitle.Text = "Title Name";
-            this.labelTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.labelTitle.Click += new System.EventHandler(this.labelTitle_Click);
+            this.panel1.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.panel1.Controls.Add(this.labelDate);
+            this.panel1.Controls.Add(this.label4);
+            this.panel1.Controls.Add(this.labelCashName);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.labelManageCategories);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1184, 59);
+            this.panel1.TabIndex = 8;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
-            // panelMain
+            // labelManageCategories
             // 
-            this.panelMain.BackColor = System.Drawing.Color.White;
-            this.panelMain.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelMain.Location = new System.Drawing.Point(225, 56);
-            this.panelMain.Name = "panelMain";
-            this.panelMain.Size = new System.Drawing.Size(959, 605);
-            this.panelMain.TabIndex = 2;
+            this.labelManageCategories.AutoSize = true;
+            this.labelManageCategories.Font = new System.Drawing.Font("Microsoft YaHei UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelManageCategories.Location = new System.Drawing.Point(495, 18);
+            this.labelManageCategories.Name = "labelManageCategories";
+            this.labelManageCategories.Size = new System.Drawing.Size(157, 28);
+            this.labelManageCategories.TabIndex = 0;
+            this.labelManageCategories.Text = "Manage Sales";
+            this.labelManageCategories.Click += new System.EventHandler(this.labelManageCategories_Click);
             // 
-            // pos
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft YaHei UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(12, 21);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(85, 25);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Cashier:";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // labelCashName
+            // 
+            this.labelCashName.AutoSize = true;
+            this.labelCashName.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCashName.Location = new System.Drawing.Point(90, 25);
+            this.labelCashName.Name = "labelCashName";
+            this.labelCashName.Size = new System.Drawing.Size(56, 21);
+            this.labelCashName.TabIndex = 2;
+            this.labelCashName.Text = "Name";
+            // 
+            // labelDate
+            // 
+            this.labelDate.AutoSize = true;
+            this.labelDate.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelDate.Location = new System.Drawing.Point(1079, 26);
+            this.labelDate.Name = "labelDate";
+            this.labelDate.Size = new System.Drawing.Size(46, 21);
+            this.labelDate.TabIndex = 4;
+            this.labelDate.Text = "Date";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft YaHei UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(1026, 22);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(60, 25);
+            this.label4.TabIndex = 3;
+            this.label4.Text = "Date:";
+            // 
+            // tbPrice
+            // 
+            this.tbPrice.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.tbPrice.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.tbPrice.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.tbPrice.HintForeColor = System.Drawing.Color.Empty;
+            this.tbPrice.HintText = "";
+            this.tbPrice.isPassword = false;
+            this.tbPrice.LineFocusedColor = System.Drawing.Color.Black;
+            this.tbPrice.LineIdleColor = System.Drawing.Color.White;
+            this.tbPrice.LineMouseHoverColor = System.Drawing.Color.Black;
+            this.tbPrice.LineThickness = 3;
+            this.tbPrice.Location = new System.Drawing.Point(146, 216);
+            this.tbPrice.Margin = new System.Windows.Forms.Padding(4);
+            this.tbPrice.Name = "tbPrice";
+            this.tbPrice.Size = new System.Drawing.Size(193, 31);
+            this.tbPrice.TabIndex = 18;
+            this.tbPrice.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(18, 226);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(47, 21);
+            this.label2.TabIndex = 17;
+            this.label2.Text = "Price";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
+            // 
+            // tbQty
+            // 
+            this.tbQty.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.tbQty.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.tbQty.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.tbQty.HintForeColor = System.Drawing.Color.Empty;
+            this.tbQty.HintText = "";
+            this.tbQty.isPassword = false;
+            this.tbQty.LineFocusedColor = System.Drawing.Color.Black;
+            this.tbQty.LineIdleColor = System.Drawing.Color.White;
+            this.tbQty.LineMouseHoverColor = System.Drawing.Color.Black;
+            this.tbQty.LineThickness = 3;
+            this.tbQty.Location = new System.Drawing.Point(146, 158);
+            this.tbQty.Margin = new System.Windows.Forms.Padding(4);
+            this.tbQty.Name = "tbQty";
+            this.tbQty.Size = new System.Drawing.Size(193, 31);
+            this.tbQty.TabIndex = 16;
+            this.tbQty.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(18, 168);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(76, 21);
+            this.label3.TabIndex = 15;
+            this.label3.Text = "Quantity";
+            // 
+            // gunaDataGridViewProd
+            // 
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
+            this.gunaDataGridViewProd.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
+            this.gunaDataGridViewProd.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.gunaDataGridViewProd.BackgroundColor = System.Drawing.Color.White;
+            this.gunaDataGridViewProd.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.gunaDataGridViewProd.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.gunaDataGridViewProd.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft YaHei UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gunaDataGridViewProd.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            this.gunaDataGridViewProd.ColumnHeadersHeight = 32;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.gunaDataGridViewProd.DefaultCellStyle = dataGridViewCellStyle9;
+            this.gunaDataGridViewProd.EnableHeadersVisualStyles = false;
+            this.gunaDataGridViewProd.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.gunaDataGridViewProd.Location = new System.Drawing.Point(22, 308);
+            this.gunaDataGridViewProd.Name = "gunaDataGridViewProd";
+            this.gunaDataGridViewProd.ReadOnly = true;
+            this.gunaDataGridViewProd.RowHeadersVisible = false;
+            this.gunaDataGridViewProd.RowTemplate.Height = 30;
+            this.gunaDataGridViewProd.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.gunaDataGridViewProd.Size = new System.Drawing.Size(379, 275);
+            this.gunaDataGridViewProd.TabIndex = 19;
+            this.gunaDataGridViewProd.Theme = Guna.UI.WinForms.GunaDataGridViewPresetThemes.Guna;
+            this.gunaDataGridViewProd.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
+            this.gunaDataGridViewProd.ThemeStyle.AlternatingRowsStyle.Font = null;
+            this.gunaDataGridViewProd.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
+            this.gunaDataGridViewProd.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
+            this.gunaDataGridViewProd.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
+            this.gunaDataGridViewProd.ThemeStyle.BackColor = System.Drawing.Color.White;
+            this.gunaDataGridViewProd.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.gunaDataGridViewProd.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.gunaDataGridViewProd.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.gunaDataGridViewProd.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Microsoft YaHei UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gunaDataGridViewProd.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
+            this.gunaDataGridViewProd.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            this.gunaDataGridViewProd.ThemeStyle.HeaderStyle.Height = 32;
+            this.gunaDataGridViewProd.ThemeStyle.ReadOnly = true;
+            this.gunaDataGridViewProd.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
+            this.gunaDataGridViewProd.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.gunaDataGridViewProd.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gunaDataGridViewProd.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.Black;
+            this.gunaDataGridViewProd.ThemeStyle.RowsStyle.Height = 30;
+            this.gunaDataGridViewProd.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.gunaDataGridViewProd.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            this.gunaDataGridViewProd.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gunaDataGridViewProd_CellContentClick);
+            // 
+            // PBarcode
+            // 
+            this.PBarcode.HeaderText = "Barcode";
+            this.PBarcode.Name = "PBarcode";
+            // 
+            // PName
+            // 
+            this.PName.HeaderText = "ProdName";
+            this.PName.Name = "PName";
+            // 
+            // PQuantity
+            // 
+            this.PQuantity.HeaderText = "ProdQty";
+            this.PQuantity.Name = "PQuantity";
+            // 
+            // PPrice
+            // 
+            this.PPrice.HeaderText = "ProdPrice";
+            this.PPrice.Name = "PPrice";
+            // 
+            // PSubtotal
+            // 
+            this.PSubtotal.HeaderText = "SubTotal";
+            this.PSubtotal.Name = "PSubtotal";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(689, 272);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(46, 21);
+            this.label5.TabIndex = 21;
+            this.label5.Text = "Date";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft YaHei UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(636, 268);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(60, 25);
+            this.label7.TabIndex = 20;
+            this.label7.Text = "Date:";
+            // 
+            // POS
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.HotTrack;
             this.ClientSize = new System.Drawing.Size(1184, 661);
-            this.Controls.Add(this.panelMain);
-            this.Controls.Add(this.panelTitle);
-            this.Controls.Add(this.panelLeftSide);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(2);
-            this.MinimumSize = new System.Drawing.Size(1200, 700);
-            this.Name = "pos";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Point Of Sales";
-            this.WindowState = System.Windows.Forms.FormWindowState.Minimized;
-            this.panelLogo.ResumeLayout(false);
-            this.panelLogo.PerformLayout();
-            this.panelLeftSide.ResumeLayout(false);
-            this.panelSubProduct.ResumeLayout(false);
-            this.panelSubStock.ResumeLayout(false);
-            this.panelSubRecord.ResumeLayout(false);
-            this.panelSubSettings.ResumeLayout(false);
-            this.panelTitle.ResumeLayout(false);
+            this.Controls.Add(this.panel3);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panel1);
+            this.Name = "POS";
+            this.Text = "POS";
+            this.Load += new System.EventHandler(this.POS_Load);
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gunaDataGridViewOrder)).EndInit();
+            this.panel2.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gunaDataGridViewProd)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Panel panelLogo;
-        private System.Windows.Forms.FlowLayoutPanel panelLeftSide;
-        private System.Windows.Forms.Panel panelTitle;
-        private System.Windows.Forms.Button buttonDashboard;
-        private System.Windows.Forms.Button buttonProduct;
-        private System.Windows.Forms.Panel panelSubProduct;
-        private System.Windows.Forms.Button buttonBrand;
-        private System.Windows.Forms.Button buttonCategory;
-        private System.Windows.Forms.Button buttonProductList;
-        private System.Windows.Forms.Button buttonStock;
-        private System.Windows.Forms.Panel panelSubStock;
-        private System.Windows.Forms.Button buttonStockAdj;
-        private System.Windows.Forms.Button buttonStockEntry;
-        private System.Windows.Forms.Button buttonSupplier;
-        private System.Windows.Forms.Button buttonRecord;
-        private System.Windows.Forms.Panel panelSubRecord;
-        private System.Windows.Forms.Button buttonSalesRecord;
-        private System.Windows.Forms.Button buttonSalesHistory;
-        private System.Windows.Forms.Button buttonSettings;
-        private System.Windows.Forms.Panel panelSubSettings;
-        private System.Windows.Forms.Button buttonStore;
-        private System.Windows.Forms.Button buttonUser;
-        private System.Windows.Forms.Button buttonLogout;
-        private System.Windows.Forms.Panel panelMain;
-        private System.Windows.Forms.Label labelAdministrator;
+        private System.Windows.Forms.Panel panel3;
+        private Guna.UI.WinForms.GunaDataGridView gunaDataGridViewOrder;
+        private System.Windows.Forms.Button buttonSearch;
+        private System.Windows.Forms.Button buttonAddProduct;
+        private Bunifu.Framework.UI.BunifuMaterialTextbox tbProdName;
+        private System.Windows.Forms.Label label6;
+        private Bunifu.Framework.UI.BunifuMaterialTextbox tbBarcode;
+        private System.Windows.Forms.Label labelBarcode;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label labelUsername;
-        private System.Windows.Forms.Label labelName;
-        private System.Windows.Forms.Label labelTitle;
+        private System.Windows.Forms.Button buttonLogout;
+        private System.Windows.Forms.Button buttonProd;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label labelManageCategories;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label labelDate;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label labelCashName;
+        private Bunifu.Framework.UI.BunifuMaterialTextbox tbPrice;
+        private System.Windows.Forms.Label label2;
+        private Bunifu.Framework.UI.BunifuMaterialTextbox tbQty;
+        private System.Windows.Forms.Label label3;
+        private Guna.UI.WinForms.GunaDataGridView gunaDataGridViewProd;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PBarcode;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PQuantity;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PPrice;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PSubtotal;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label7;
     }
 }

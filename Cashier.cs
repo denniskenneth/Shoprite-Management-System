@@ -30,7 +30,6 @@ namespace Shoprite_Management_System
             var dataSet = new DataSet();
             adapter.Fill(dataSet);
             gunaDataGridViewCash.DataSource = dataSet.Tables[0];
-            conn.Close();
         }
 
         private void buttonProd_Click(object sender, EventArgs e)
@@ -69,6 +68,7 @@ namespace Shoprite_Management_System
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
+                conn.Close();
             }
         }
 
@@ -96,6 +96,11 @@ namespace Shoprite_Management_System
                     MessageBox.Show("Cashier Detail Updated Sucessfully");
                     conn.Close();
                     populate();
+                    bunifuMaterialTextboxID.Text = "";
+                    bunifuMaterialTextboxName.Text = "";
+                    bunifuMaterialTextboxPhone.Text = "";
+                    bunifuMaterialTextboxDOB.Text = "";
+                    bunifuMaterialTextboxPass.Text = "";
                 }
 
 
@@ -103,6 +108,7 @@ namespace Shoprite_Management_System
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
+                conn.Close();
             }
         }
 
@@ -121,11 +127,17 @@ namespace Shoprite_Management_System
                     MessageBox.Show("Cashier Deleted Sucessfully");
                     conn.Close();
                     populate();
+                    bunifuMaterialTextboxID.Text = "";
+                    bunifuMaterialTextboxName.Text = "";
+                    bunifuMaterialTextboxPhone.Text = "";
+                    bunifuMaterialTextboxDOB.Text = "";
+                    bunifuMaterialTextboxPass.Text = "";
                 }
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
+                conn.Close ();  
             }
         }
     }
