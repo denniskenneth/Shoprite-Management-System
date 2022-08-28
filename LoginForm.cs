@@ -66,18 +66,20 @@ namespace Shoprite_Management_System
                         }
                         else
                         {
-                            MessageBox.Show("Please enter correct  admin details");
+                            MessageBox.Show("Please Enter Correct  Admin details");
                         }
                     }
                     else
                     {
-                        MessageBox.Show("Seller");
+                        POS pos = new POS();
+                        pos.Show();
+                        this.Hide();
                     }
                     
                 }
                 else
                 {
-                    MessageBox.Show("Role");
+                    MessageBox.Show("Please Select an Appropriate Role");
                 }
             }
         }

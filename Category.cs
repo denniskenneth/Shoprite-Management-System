@@ -122,10 +122,15 @@ namespace Shoprite_Management_System
 
         private void buttonCashier_Click(object sender, EventArgs e)
         {
-            Category category = new Category();
-            category.Show();
+            Cashier cash = new Cashier();
+            cash.Show();
 
             this.Hide();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

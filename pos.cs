@@ -5,10 +5,12 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Reflection;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using MySqlX.XDevAPI.Relational;
 using Shoprite_Management_System.Database;
 
 namespace Shoprite_Management_System
@@ -28,6 +30,17 @@ namespace Shoprite_Management_System
         MySqlCommand cmd;
         MySqlDataReader reader;
 
+        //Transaction ID Generator
+        private string transIdGenerator()
+        {
+            // char length 
+            var buffer = new byte[19]; 
+            var random = RNGCryptoServiceProvider.Create();
+            random.GetBytes(buffer);
+            var randomPart = Convert.ToBase64String(buffer);
+            return randomPart;
+        }
+
         private void populate()
         {
             conn.Open();
@@ -44,7 +57,7 @@ namespace Shoprite_Management_System
         {
             conn.Open();
             //string query = $"SELECT * FROM `transdetail` WHERE 1";
-            string query = $"SELECT * FROM `product` WHERE 1";
+            string query = $"SELECT * FROM `transdetail` WHERE 1";
             MySqlDataAdapter adapter = new MySqlDataAdapter(query, conn);
             MySqlCommandBuilder builder = new MySqlCommandBuilder(adapter);
             var dataSet = new DataSet();
@@ -81,32 +94,130 @@ namespace Shoprite_Management_System
 
         // Radom String Generator
 
+        private int loopDGV(DataGridView x, int ij)
+        {
+            int init = 0;
+            DataGridView grid = new DataGridView();
+            grid = x;
+            foreach(DataGridViewRow dr in grid.Rows)
+            {
+                int conv = Convert.ToInt32(dr.Cells[ij].Value.ToString());
+                init += conv;
+            }
+            return init;
+        }
+        private decimal loopDeciDGV(DataGridView x, int ij)
+        {
+            decimal init = 0;
+            DataGridView grid = new DataGridView();
+            grid = x;
+            foreach (DataGridViewRow dr in grid.Rows)
+            {
+                decimal conv = Convert.ToDecimal(dr.Cells[ij].Value.ToString());
+                init += conv;
+            }
+            return init;
+        }
         private void buttonCatAdd_Click(object sender, EventArgs e)
         {
-            Decimal subTotal = Decimal.Parse(tbPrice.Text) * Decimal.Parse(tbQty.Text);
+            Decimal subTotal = 0;
+            int x;
+            Decimal ovrllTotal = 0;
             
 
 
             if (tbProdName.Text == "" || tbBarcode.Text == "" || tbPrice.Text=="" || tbQty.Text == "" )
             {
                 MessageBox.Show("Please ensure to enter all details");
+            }else
+            {
+                if (gunaDataGridViewOrder.Rows.Count == 0)
+                {
+                    DataGridViewRow row = new DataGridViewRow();
+                    row.CreateCells(gunaDataGridViewOrder);
+                    row.Cells[0].Value = tbBarcode.Text;
+                    row.Cells[1].Value = tbProdName.Text;
+                    row.Cells[2].Value = tbQty.Text;
+                    row.Cells[3].Value = tbPrice.Text;
+                    row.Cells[4].Value = subTotal;
+
+
+
+                    gunaDataGridViewOrder.Rows.Add(row);
+                    var qty = row.Cells[2].Value;
+                    subTotal = Decimal.Parse(tbPrice.Text) * Decimal.Parse(tbQty.Text);
+                    row.Cells[4].Value = subTotal;
+                    overallTotal += subTotal;
+                    labelOverallTtl.Text = "GHS " + overallTotal;
+                    totalQty += Convert.ToDecimal(qty);
+                    labelTtlQty.Text = Convert.ToString(totalQty);
+                }else
+                {
+                    bool match = false;
+                    DataGridViewRow dataGridViewRow = new DataGridViewRow();
+                    foreach (DataGridViewRow row in gunaDataGridViewOrder.Rows)
+                    {
+                        if (tbBarcode.Text == row.Cells[0].Value.ToString()){
+                            match = true;
+                            dataGridViewRow = row;
+                        }
+                      
+                        else
+                            match = false;
+                    }
+
+                    if (match)
+                    {
+                        var orgnl = Convert.ToInt32(dataGridViewRow.Cells[2].Value.ToString());
+                        var qty = Convert.ToInt32(tbQty.Text);
+                        dataGridViewRow.Cells[2].Value = orgnl + qty;
+                        int loopres = loopDGV(gunaDataGridViewOrder, 2);
+                        labelTtlQty.Text = Convert.ToString(loopres);
+                        subTotal = Decimal.Parse(dataGridViewRow.Cells[2].Value.ToString()) * Decimal.Parse(dataGridViewRow.Cells[3].Value.ToString());
+                        dataGridViewRow.Cells[4].Value = subTotal;
+                        //string totalLoop = Convert.ToString(loopDGV(gunaDataGridViewOrder, 4));
+                        //overallTotal += Convert.ToDecimal(totalLoop);
+                        labelOverallTtl.Text = "GHS " + subTotal;
+                    }else
+                    {
+                        DataGridViewRow row = new DataGridViewRow();
+                        row.CreateCells(gunaDataGridViewOrder);
+                        row.Cells[0].Value = tbBarcode.Text;
+                        row.Cells[1].Value = tbProdName.Text;
+                        row.Cells[2].Value = tbQty.Text;
+                        row.Cells[3].Value = tbPrice.Text;
+                        row.Cells[4].Value = subTotal;
+
+
+
+                        gunaDataGridViewOrder.Rows.Add(row);
+                        //var qty = row.Cells[2].Value;
+                        subTotal = Decimal.Parse(tbPrice.Text) * Decimal.Parse(tbQty.Text);
+                        row.Cells[4].Value = subTotal;
+                        int loopres = loopDGV(gunaDataGridViewOrder, 2);
+                        labelTtlQty.Text = Convert.ToString(loopres);
+                        //int loopres = loopDGV(gunaDataGridViewOrder, 4);
+                        decimal loopTotal = loopDeciDGV(gunaDataGridViewOrder, 4);
+                        //overallTotal += subTotal;
+                        labelOverallTtl.Text = "GHS " + loopTotal.ToString();
+                        //totalQty += Convert.ToDecimal(qty);
+                        //labelTtlQty.Text = Convert.ToString(totalQty);
+                    }
+                    //for (int i = 0; i < gunaDataGridViewOrder.Rows.Count; i++)
+                    //{
+                        //DataGridView grid = gunaDataGridViewOrder;
+                        //if (String.IsNullOrEmpty(grid.Rows[i+1].Cells[0].Value as String))
+                        //{
+                        //    MessageBox.Show("cell is empty");
+                        //    return;
+                        //}
+                        
+                    //}
+                    
+                }
+                
             }
-            DataGridViewRow row = new DataGridViewRow();
-            row.CreateCells(gunaDataGridViewOrder);
-            row.Cells[0].Value = tbBarcode.Text;
-            row.Cells[1].Value = tbProdName.Text;
-            row.Cells[2].Value = tbQty.Text;
-            row.Cells[3].Value = tbPrice.Text;//Convert.ToInt32(tbPrice.Text) * Convert.ToInt32(tbQty.Text);
-            row.Cells[4].Value = subTotal;
-
             
-
-            gunaDataGridViewOrder.Rows.Add(row);
-            var qty = gunaDataGridViewOrder.CurrentRow.Cells[2].Value;
-            overallTotal += subTotal;
-            labelOverallTtl.Text =  "GHS "+overallTotal;
-            totalQty += Convert.ToDecimal(qty);
-            labelTtlQty.Text = Convert.ToString(totalQty);
         }
 
         private void buttonSearch_Click(object sender, EventArgs e)
@@ -161,18 +272,24 @@ namespace Shoprite_Management_System
 
         private void buttonAddTrans_Click(object sender, EventArgs e)
         {
+            var transId = transIdGenerator();
+            int ReturnValue=0;
             foreach (DataGridViewRow rw in gunaDataGridViewOrder.Rows) {
                 try
                 {
+                   
                     conn.Open();
-                    string qury = $"INSERT INTO `tansaction`(`transId`, `cashId`) VALUES (1232510,1)";
+                    MySqlCommand mycomm = new MySqlCommand("Select `cashId` From `cashier` WHERE `cashId` = 1", conn);
+                    var sqlReturn = mycomm.ExecuteScalar();
+                    if (sqlReturn != null) { ReturnValue = Convert.ToInt32(sqlReturn); }
+                    string qury = $"INSERT INTO `tansaction`(`transId`, `cashId`) VALUES ('{transId}', '{ReturnValue}')";
                     cmd = new MySqlCommand(qury, conn);
                     cmd.ExecuteNonQuery();
                     MessageBox.Show("Transaction Added Successfully");
-                    conn.Close();
+                    
 
-                    conn.Open();
-                    string qry = $"INSERT INTO `transdetail`(`transId`, `barcode`, `qty`, `amount`) VALUES (1232510,{rw.Cells[0].Value.ToString()},1,'{Convert.ToDecimal(labelOverallTtl.Text)}')";
+                    
+                    string qry = $"INSERT INTO `transdetail`(`transId`, `barcode`, `cashId`, `qty`, `amount`) VALUES ('{transId}','{rw.Cells[0].Value.ToString()}', '{ReturnValue}', '{labelTtlQty.Text}', {overallTotal})";
                     cmd = new MySqlCommand(qry, conn);
                     cmd.ExecuteNonQuery();
                     MessageBox.Show("Product Transaction Detail Added Successfully");

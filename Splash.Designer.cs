@@ -29,10 +29,12 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Splash));
             this.labelSplashTitle = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.bunifuProgressBarSplash = new Bunifu.Framework.UI.BunifuProgressBar();
             this.timerSplash = new System.Windows.Forms.Timer(this.components);
+            this.panel1 = new System.Windows.Forms.Panel();
             this.SuspendLayout();
             // 
             // labelSplashTitle
@@ -75,12 +77,24 @@
             // 
             this.timerSplash.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
+            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.panel1.Location = new System.Drawing.Point(159, 112);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(484, 281);
+            this.panel1.TabIndex = 12;
+            // 
             // Splash
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.HotTrack;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.bunifuProgressBarSplash);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.labelSplashTitle);
@@ -99,5 +113,6 @@
         private System.Windows.Forms.Label label1;
         private Bunifu.Framework.UI.BunifuProgressBar bunifuProgressBarSplash;
         private System.Windows.Forms.Timer timerSplash;
+        private System.Windows.Forms.Panel panel1;
     }
 }

@@ -124,6 +124,7 @@
     <Compile Include="LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="PasswordHasher.cs" />
     <Compile Include="POS.cs">
       <SubType>Form</SubType>
     </Compile>

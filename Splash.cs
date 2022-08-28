@@ -21,7 +21,8 @@ namespace Shoprite_Management_System
         {
             strt++;
             bunifuProgressBarSplash.Value = strt;
-            if (bunifuProgressBarSplash.Value == 100)
+            //if (bunifuProgressBarSplash.Value == 100)
+            if (bunifuProgressBarSplash.Value == 10)
             {
                 bunifuProgressBarSplash.Value = 0;
                 timerSplash.Stop();
