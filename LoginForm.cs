@@ -1,4 +1,6 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using Shoprite_Management_System.Database;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,7 +18,9 @@ namespace Shoprite_Management_System
         {
             InitializeComponent();
         }
-
+        MySqlConnection conn;
+        MySqlCommand comm;
+        MySqlDataReader reader;
         private void label1_Click(object sender, EventArgs e)
         {
            
@@ -34,7 +38,8 @@ namespace Shoprite_Management_System
 
         private void FormLogin_Load(object sender, EventArgs e)
         {
-
+            
+            
         }
 
         private void labelClose_Click(object sender, EventArgs e)
@@ -71,9 +76,43 @@ namespace Shoprite_Management_System
                     }
                     else
                     {
-                        POS pos = new POS();
-                        pos.Show();
-                        this.Hide();
+                        conn = new MySqlConnection("server = localhost; user = root; database = shoprite; password =");
+                        comm = new MySqlCommand($"Select `cashName`, `cashPassword` From `cashier`", conn);
+                        string name = "", password = "";
+
+                        try
+                        {
+                            conn.Open();
+                            reader = comm.ExecuteReader();
+
+                            while (reader.Read())
+                            {
+                                name = reader.GetString("cashName");
+                                password = reader.GetString("cashPassword");
+
+                            }
+
+
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show(ex.Message);
+                        }
+                        finally
+                        {
+                            conn.Close();
+                        }   
+                        
+                        if (textBoxUsername.Text.ToLower() == name && Hash.Hash_SHA1(textBoxPassword.Text) == password)
+                        {
+                            this.Hide();
+                            Product product = new Product();
+                            product.Show();
+                            MessageBox.Show("works");
+                        } else
+                        {
+                            MessageBox.Show($"doesnt work -- {PasswordHasher.HashString(textBoxPassword.Text)}");
+                        }
                     }
                     
                 }

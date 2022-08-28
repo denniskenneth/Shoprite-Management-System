@@ -24,6 +24,7 @@ namespace Shoprite_Management_System
         // Variables
         decimal overallTotal = 0;
         decimal totalQty = 0;
+        public static string cashiersName;
         // SQL OBJ
         MySqlConnection conn = new MySqlConnection(DBconn.Connection());
         string query = "";
@@ -83,6 +84,7 @@ namespace Shoprite_Management_System
 
         private void POS_Load(object sender, EventArgs e)
         {
+            labelCashName.Text = cashiersName;
             populate();
             populateTransaction();
         }
@@ -121,8 +123,8 @@ namespace Shoprite_Management_System
         private void buttonCatAdd_Click(object sender, EventArgs e)
         {
             Decimal subTotal = 0;
-            int x;
-            Decimal ovrllTotal = 0;
+            //int x;
+            //Decimal ovrllTotal = 0;
             
 
 
@@ -310,6 +312,13 @@ namespace Shoprite_Management_System
         private void gunaDataGridViewOrder_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void buttonLogout_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            FormLogin login = new FormLogin();
+            login.Show();
         }
     }
 }

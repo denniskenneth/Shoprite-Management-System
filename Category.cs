@@ -18,23 +18,29 @@ namespace Shoprite_Management_System
         {
             InitializeComponent();
         }
-        DBconn dbconn = new DBconn();
+        MySqlConnection conn = new MySqlConnection("server=localhost;user=root;database=shoprite;password=");
         private void buttonCatAdd_Click(object sender, EventArgs e)
         {
             try
             {
-                dbconn.Open();
-                string query = $"INSERT INTO `category`(`catId`, `catName`, `catDescription`) VALUES ('{tbCatId.Text}','{tbCatName.Text.ToLower()}','{tbCatDesc.Text.ToLower()}')";
-                dbconn.Query(query);
+                conn.Open();
+                string query = $"INSERT INTO `category`(`catId`, `catName`, `catDescription`) VALUES ('{tbCatId.Text.ToLower()}','{tbCatName.Text.ToLower()}','{tbCatDesc.Text.ToLower()}')";
+                MySqlCommand cmmd = new MySqlCommand(query, conn);
+                cmmd.ExecuteNonQuery();
                 MessageBox.Show("Category Added Successfully");
-                dbconn.Close();
-                populate();
+                
+                
             } catch(Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
+            finally
+            {
+                conn.Close();
+                populate();
+            }
         }
-        MySqlConnection conn = new MySqlConnection(DBconn.Connection());
+        
         private void gunaDataGridViewCat_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             tbCatId.Text = gunaDataGridViewCat.SelectedRows[0].Cells[0].Value.ToString();
@@ -86,6 +92,7 @@ namespace Shoprite_Management_System
             {
                 MessageBox.Show(ex.Message);
             }
+        
         }
 
         private void buttonCatEdit_Click(object sender, EventArgs e)
@@ -131,6 +138,18 @@ namespace Shoprite_Management_System
         private void button2_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void buttonLogout_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            FormLogin login = new FormLogin();
+            login.Show();
         }
     }
 }

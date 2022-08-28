@@ -159,5 +159,12 @@ namespace Shoprite_Management_System
         {
 
         }
+
+        private void buttonLogout_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            FormLogin login = new FormLogin();
+            login.Show();
+        }
     }
 }

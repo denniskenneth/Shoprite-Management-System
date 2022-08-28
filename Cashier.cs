@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,7 +20,8 @@ namespace Shoprite_Management_System
             InitializeComponent();
         }
 
-        MySqlConnection conn = new MySqlConnection(DBconn.Connection());
+        MySqlConnection conn = new MySqlConnection("server=localhost;user=root;database=shoprite;password=");
+        MySqlDataReader reader;
 
         private void populate()
         {
@@ -30,6 +32,7 @@ namespace Shoprite_Management_System
             var dataSet = new DataSet();
             adapter.Fill(dataSet);
             gunaDataGridViewCash.DataSource = dataSet.Tables[0];
+            conn.Close();
         }
 
         private void buttonProd_Click(object sender, EventArgs e)
@@ -55,21 +58,64 @@ namespace Shoprite_Management_System
 
         private void buttonAdd_Click(object sender, EventArgs e)
         {
+            string pass;
+            string name = "";
+            pass = Hash.Hash_SHA1(bunifuMaterialTextboxPass.Text);
+            MySqlCommand cmd;
             try
             {
+                string qry = $"SELECT `cashName` FROM `cashier` WHERE 1";
+                cmd = new MySqlCommand(qry, conn);
                 conn.Open();
-                string query = $"INSERT INTO `cashier`(`cashName`, `cashDOB`, `cashPhone`, `cashPassword`) VALUES ('{bunifuMaterialTextboxName.Text}','{bunifuMaterialTextboxDOB.Text}','{bunifuMaterialTextboxPhone.Text}', '{bunifuMaterialTextboxPass.Text}')";
-                MySqlCommand cmd = new MySqlCommand(query, conn);
-                cmd.ExecuteNonQuery();
-                MessageBox.Show("Cashier Added Successfully");
-                conn.Close();
-                populate();
+                reader = cmd.ExecuteReader();
+          
+                while (reader.Read())
+                {
+                    name = reader.GetString("cashName");
+                    
+                }
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
-                conn.Close();
             }
+            finally
+            {
+               conn.Close();
+                //populate();
+            }
+
+            if (name == bunifuMaterialTextboxName.Text)
+            {
+                MessageBox.Show("Please The Username Already exist!!");
+
+            }
+            else
+            {
+                try
+                {
+                    conn.Open();
+                    string query = $"INSERT INTO `cashier`(`cashName`, `cashDOB`, `cashPhone`, `cashPassword`) VALUES ('{bunifuMaterialTextboxName.Text}','{bunifuMaterialTextboxDOB.Text}','{bunifuMaterialTextboxPhone.Text}', '{pass}')";
+
+                    cmd = new MySqlCommand(query, conn);
+                    cmd.ExecuteNonQuery();
+                    MessageBox.Show("Cashier Added Successfully");
+                    conn.Close();
+
+                }
+                catch(Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                finally
+                {
+                    conn.Close();
+                    populate();
+                }
+                
+
+            }
+
         }
 
         private void gunaDataGridViewCash_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -89,12 +135,14 @@ namespace Shoprite_Management_System
                     MessageBox.Show("PLease Enter the Missing Information");
                 else
                 {
+                    string pass = Hash.Hash_SHA1(bunifuMaterialTextboxPass.Text);
                     conn.Open();
-                    string query = $"UPDATE `cashier` SET `cashName`='{bunifuMaterialTextboxName.Text}',`cashDOB``='{bunifuMaterialTextboxDOB.Text}', `cashPhone`='{bunifuMaterialTextboxPhone.Text}', `cashPassword`='{bunifuMaterialTextboxPass.Text}' WHERE `cashId`='{bunifuMaterialTextboxID.Text}'";
+                    string query = $"UPDATE `cashier` SET `cashName`='{bunifuMaterialTextboxName.Text}',`cashDOB`='{bunifuMaterialTextboxDOB.Text}', `cashPhone`='{bunifuMaterialTextboxPhone.Text}', `cashPassword`='{pass}' WHERE `cashId`='{bunifuMaterialTextboxID.Text}'";
                     MySqlCommand cmd = new MySqlCommand(query, conn);
                     cmd.ExecuteNonQuery();
-                    MessageBox.Show("Cashier Detail Updated Sucessfully");
                     conn.Close();
+                    MessageBox.Show("Cashier Detail Updated Sucessfully");
+
                     populate();
                     bunifuMaterialTextboxID.Text = "";
                     bunifuMaterialTextboxName.Text = "";
@@ -108,6 +156,9 @@ namespace Shoprite_Management_System
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
+            }
+            finally
+            {
                 conn.Close();
             }
         }
@@ -124,8 +175,8 @@ namespace Shoprite_Management_System
                     string query = $"DELETE FROM `cashier` WHERE `cashId` = '{bunifuMaterialTextboxID.Text}'";
                     MySqlCommand cmd = new MySqlCommand(query, conn);
                     cmd.ExecuteNonQuery();
-                    MessageBox.Show("Cashier Deleted Sucessfully");
                     conn.Close();
+                    MessageBox.Show("Cashier Deleted Sucessfully");
                     populate();
                     bunifuMaterialTextboxID.Text = "";
                     bunifuMaterialTextboxName.Text = "";
@@ -136,9 +187,24 @@ namespace Shoprite_Management_System
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
-                conn.Close ();  
+                MessageBox.Show(ex.Message);  
             }
+            finally
+            {
+                conn.Close();
+            }
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonLogout_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            FormLogin login = new FormLogin();
+            login.Show();
         }
     }
 }

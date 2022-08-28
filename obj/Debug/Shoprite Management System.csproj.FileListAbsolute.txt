@@ -67,7 +67,6 @@ C:\Users\Hp\Desktop\Shoprite-Management-System\bin\Debug\System.Numerics.Vectors
 C:\Users\Hp\Desktop\Shoprite-Management-System\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 C:\Users\Hp\Desktop\Shoprite-Management-System\obj\Debug\Shoprite Management System.csproj.AssemblyReference.cache
 C:\Users\Hp\Desktop\Shoprite-Management-System\obj\Debug\Shoprite Management System.csproj.SuggestedBindingRedirects.cache
-C:\Users\Hp\Desktop\Shoprite-Management-System\obj\Debug\Shoprite_Management_System.Brand.resources
 C:\Users\Hp\Desktop\Shoprite-Management-System\obj\Debug\Shoprite_Management_System.Cashier.resources
 C:\Users\Hp\Desktop\Shoprite-Management-System\obj\Debug\Shoprite_Management_System.Category.resources
 C:\Users\Hp\Desktop\Shoprite-Management-System\obj\Debug\Shoprite_Management_System.FormLogin.resources
