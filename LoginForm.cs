@@ -54,6 +54,7 @@ namespace Shoprite_Management_System
 
         private void buttonLogin_Click(object sender, EventArgs e)
         {
+            user usr;
             if (textBoxUsername.Text == "" || textBoxPassword.Text == "")
             {
                 MessageBox.Show("Enter The Username and Password");
@@ -77,7 +78,7 @@ namespace Shoprite_Management_System
                     else
                     {
                         conn = new MySqlConnection("server = localhost; user = root; database = shoprite; password =");
-                        comm = new MySqlCommand($"Select `cashName`, `cashPassword` From `cashier`", conn);
+                        comm = new MySqlCommand($"Select * From `cashier`", conn);
                         string name = "", password = "";
 
                         try
@@ -89,9 +90,12 @@ namespace Shoprite_Management_System
                             {
                                 name = reader.GetString("cashName");
                                 password = reader.GetString("cashPassword");
+                                usr = new user(name, Convert.ToInt32(reader.GetString("cashId")), reader.GetString("cashDOB"), reader.GetString("cashPhone"), password);
 
+                                POS.cashiersName = usr.usrName;
+                                POS.cashiersId = usr.id;
                             }
-
+                            
 
                         }
                         catch (Exception ex)
@@ -106,7 +110,7 @@ namespace Shoprite_Management_System
                         if (textBoxUsername.Text.ToLower() == name && Hash.Hash_SHA1(textBoxPassword.Text) == password)
                         {
                             this.Hide();
-                            Product product = new Product();
+                            POS product = new POS();
                             product.Show();
                             MessageBox.Show("works");
                         } else

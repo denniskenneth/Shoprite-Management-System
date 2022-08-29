@@ -25,6 +25,7 @@ namespace Shoprite_Management_System
         decimal overallTotal = 0;
         decimal totalQty = 0;
         public static string cashiersName;
+        public static int cashiersId;
         // SQL OBJ
         MySqlConnection conn = new MySqlConnection(DBconn.Connection());
         string query = "";
@@ -88,6 +89,8 @@ namespace Shoprite_Management_System
             populate();
             populateTransaction();
         }
+
+        int flag = 0;
 
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
@@ -276,36 +279,92 @@ namespace Shoprite_Management_System
         {
             var transId = transIdGenerator();
             int ReturnValue=0;
+            int qty=0;
+
+            try
+            {
+                conn.Open();
+                MySqlCommand mycomm = new MySqlCommand("Select `cashId` From `cashier` WHERE `cashId` = 1", conn);
+                var sqlReturn = mycomm.ExecuteScalar();
+                if (sqlReturn != null) { ReturnValue = Convert.ToInt32(sqlReturn); }
+                string qury = $"INSERT INTO `tansaction`(`transId`, `cashId`) VALUES ('{transId}', '{ReturnValue}')";
+                cmd = new MySqlCommand(qury, conn);
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Transaction Added Successfully");
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
             foreach (DataGridViewRow rw in gunaDataGridViewOrder.Rows) {
                 try
                 {
-                   
                     conn.Open();
-                    MySqlCommand mycomm = new MySqlCommand("Select `cashId` From `cashier` WHERE `cashId` = 1", conn);
-                    var sqlReturn = mycomm.ExecuteScalar();
-                    if (sqlReturn != null) { ReturnValue = Convert.ToInt32(sqlReturn); }
-                    string qury = $"INSERT INTO `tansaction`(`transId`, `cashId`) VALUES ('{transId}', '{ReturnValue}')";
-                    cmd = new MySqlCommand(qury, conn);
-                    cmd.ExecuteNonQuery();
-                    MessageBox.Show("Transaction Added Successfully");
-                    
+                    MySqlCommand mycomm = new MySqlCommand($"Select `quantity` From `product` WHERE `barcode` = '{rw.Cells[0].Value}'", conn);
+                    reader = mycomm.ExecuteReader();
 
+                    while (reader.Read())
+                    {
+                        qty=reader.GetInt32("quantity");
+                    }
+                    //string qry = $"INSERT INTO `transdetail`(`transId`, `barcode`, `cashId`, `qty`, `amount`, `time`) VALUES ('{transId}','{rw.Cells[0].Value.ToString()}', '{ReturnValue}', '{labelTtlQty.Text}', {overallTotal}, '{DateTime.Now.ToString("yyyy-MM-dd h:mm:ss tt")}')";
+                }catch(Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                finally
+                {
+                    conn.Close();
+                }
+                qty -= Convert.ToInt32(rw.Cells[2].Value.ToString());
+                try
+                {
+
+                    conn.Open();
                     
-                    string qry = $"INSERT INTO `transdetail`(`transId`, `barcode`, `cashId`, `qty`, `amount`) VALUES ('{transId}','{rw.Cells[0].Value.ToString()}', '{ReturnValue}', '{labelTtlQty.Text}', {overallTotal})";
+                    string qry = $"INSERT INTO `transdetail`(`transId`, `barcode`, `cashId`, `qty`, `amount`, `time`) VALUES ('{transId}','{rw.Cells[0].Value.ToString()}', '{ReturnValue}', '{labelTtlQty.Text}', {overallTotal}, '{DateTime.Now.ToString("yyyy-MM-dd h:mm:ss tt")}')";
                     cmd = new MySqlCommand(qry, conn);
                     cmd.ExecuteNonQuery();
                     MessageBox.Show("Product Transaction Detail Added Successfully");
                     conn.Close();
                     populate();
+                    populateTransaction();
                 }
                 catch (Exception ex)
                 {
                     MessageBox.Show(ex.Message);
                     conn.Close();
                 }
+                finally
+                {
+                    conn.Close();
+                    populateTransaction();
+                }
+
+                try
+                {
+                    conn.Open();
+                    MySqlCommand comm = new MySqlCommand($"UPDATE `product` SET `quantity`='{qty}' WHERE `barcode`='{rw.Cells[0].Value}'", conn);
+                    comm.ExecuteNonQuery();
+                } catch(Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }finally
+                {
+                    conn.Close();
+                    populate();
+                }
             }
             overallTotal = 0;
             totalQty = 0;
+            labelOverallTtl.Text = "GHS " + overallTotal;
+            labelTtlQty.Text = totalQty.ToString();
+            gunaDataGridViewOrder.Rows.Clear();
+            gunaDataGridViewOrder.Refresh();
             
         }
 
@@ -319,6 +378,28 @@ namespace Shoprite_Management_System
             this.Hide();
             FormLogin login = new FormLogin();
             login.Show();
+        }
+
+        private void gunaDataGridViewTransaction_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            flag = 1;
+        }
+
+        private void printDocumentTrans_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
+        {
+            e.Graphics.DrawString("Shoprite Mangement System", new Font("Time New Roman", 25, FontStyle.Bold), Brushes.Blue, new Point(230));
+            e.Graphics.DrawString("Transaction ID: "+gunaDataGridViewTransaction.SelectedRows[0].Cells[0].Value.ToString(), new Font("Time New Roman", 13, FontStyle.Bold), Brushes.Black, new Point(0, 70));
+            e.Graphics.DrawString("Cashier ID: " + gunaDataGridViewTransaction.SelectedRows[0].Cells[2].Value.ToString(), new Font("Time New Roman", 13, FontStyle.Bold), Brushes.Black, new Point(0, 90));
+            e.Graphics.DrawString("Total Amount: " + gunaDataGridViewTransaction.SelectedRows[0].Cells[4].Value.ToString(), new Font("Time New Roman", 13, FontStyle.Bold), Brushes.Black, new Point(0, 110));
+            e.Graphics.DrawString("Date: " + gunaDataGridViewTransaction.SelectedRows[0].Cells[5].Value.ToString(), new Font("Time New Roman", 13, FontStyle.Bold), Brushes.Black, new Point(0, 130));
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (printPreviewDialogTrans.ShowDialog() == DialogResult.OK)
+            {
+                printDocumentTrans.Print();
+            }
         }
     }
 }

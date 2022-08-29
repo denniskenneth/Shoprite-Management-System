@@ -83,6 +83,10 @@ namespace Shoprite_Management_System
             {
                 MessageBox.Show(ex.Message);
             }
+            finally
+            {
+                conn.Close();
+            }
         }
 
         private void gunaDataGridViewProd_CellContentClick(object sender, DataGridViewCellEventArgs e)

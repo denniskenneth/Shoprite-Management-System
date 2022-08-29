@@ -80,3 +80,87 @@ C:\Users\Hp\Desktop\Shoprite-Management-System\obj\Debug\Shoprite Management Sys
 C:\Users\Hp\Desktop\Shoprite-Management-System\obj\Debug\Shoprite Management System.exe
 C:\Users\Hp\Desktop\Shoprite-Management-System\obj\Debug\Shoprite Management System.pdb
 C:\Users\Hp\Desktop\Shoprite-Management-System\bin\Debug\Shoprite Management System.pdb
+E:\Shoprite-Management-System\bin\Debug\Shoprite Management System.exe.config
+E:\Shoprite-Management-System\bin\Debug\Shoprite Management System.exe
+E:\Shoprite-Management-System\bin\Debug\Shoprite Management System.pdb
+E:\Shoprite-Management-System\bin\Debug\BouncyCastle.Crypto.dll
+E:\Shoprite-Management-System\bin\Debug\Google.Protobuf.dll
+E:\Shoprite-Management-System\bin\Debug\K4os.Compression.LZ4.dll
+E:\Shoprite-Management-System\bin\Debug\K4os.Compression.LZ4.Streams.dll
+E:\Shoprite-Management-System\bin\Debug\K4os.Hash.xxHash.dll
+E:\Shoprite-Management-System\bin\Debug\MySql.Data.dll
+E:\Shoprite-Management-System\bin\Debug\NuGet.Frameworks.dll
+E:\Shoprite-Management-System\bin\Debug\System.Buffers.dll
+E:\Shoprite-Management-System\bin\Debug\System.Memory.dll
+E:\Shoprite-Management-System\bin\Debug\System.Numerics.Vectors.dll
+E:\Shoprite-Management-System\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+E:\Shoprite-Management-System\bin\Debug\Ubiety.Dns.Core.dll
+E:\Shoprite-Management-System\bin\Debug\ZstdNet.dll
+E:\Shoprite-Management-System\bin\Debug\BouncyCastle.Crypto.xml
+E:\Shoprite-Management-System\bin\Debug\Google.Protobuf.pdb
+E:\Shoprite-Management-System\bin\Debug\Google.Protobuf.xml
+E:\Shoprite-Management-System\bin\Debug\K4os.Compression.LZ4.xml
+E:\Shoprite-Management-System\bin\Debug\K4os.Compression.LZ4.Streams.xml
+E:\Shoprite-Management-System\bin\Debug\K4os.Hash.xxHash.xml
+E:\Shoprite-Management-System\bin\Debug\MySql.Data.xml
+E:\Shoprite-Management-System\bin\Debug\NuGet.Frameworks.xml
+E:\Shoprite-Management-System\bin\Debug\System.Buffers.xml
+E:\Shoprite-Management-System\bin\Debug\System.Memory.xml
+E:\Shoprite-Management-System\bin\Debug\System.Numerics.Vectors.xml
+E:\Shoprite-Management-System\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+E:\Shoprite-Management-System\obj\Debug\Shoprite Management System.csproj.AssemblyReference.cache
+E:\Shoprite-Management-System\obj\Debug\Shoprite Management System.csproj.SuggestedBindingRedirects.cache
+E:\Shoprite-Management-System\obj\Debug\Shoprite_Management_System.Cashier.resources
+E:\Shoprite-Management-System\obj\Debug\Shoprite_Management_System.Category.resources
+E:\Shoprite-Management-System\obj\Debug\Shoprite_Management_System.FormLogin.resources
+E:\Shoprite-Management-System\obj\Debug\Shoprite_Management_System.POS.resources
+E:\Shoprite-Management-System\obj\Debug\Shoprite_Management_System.Product.resources
+E:\Shoprite-Management-System\obj\Debug\Shoprite_Management_System.Properties.Resources.resources
+E:\Shoprite-Management-System\obj\Debug\Shoprite_Management_System.Splash.resources
+E:\Shoprite-Management-System\obj\Debug\Shoprite Management System.csproj.GenerateResource.cache
+E:\Shoprite-Management-System\obj\Debug\Shoprite Management System.csproj.CoreCompileInputs.cache
+E:\Shoprite-Management-System\obj\Debug\Shoprite Management System.csproj.CopyComplete
+E:\Shoprite-Management-System\obj\Debug\Shoprite Management System.exe
+E:\Shoprite-Management-System\obj\Debug\Shoprite Management System.pdb
+D:\Shoprite-Management-System\bin\Debug\Shoprite Management System.exe.config
+D:\Shoprite-Management-System\bin\Debug\Shoprite Management System.exe
+D:\Shoprite-Management-System\bin\Debug\Shoprite Management System.pdb
+D:\Shoprite-Management-System\bin\Debug\BouncyCastle.Crypto.dll
+D:\Shoprite-Management-System\bin\Debug\Google.Protobuf.dll
+D:\Shoprite-Management-System\bin\Debug\K4os.Compression.LZ4.dll
+D:\Shoprite-Management-System\bin\Debug\K4os.Compression.LZ4.Streams.dll
+D:\Shoprite-Management-System\bin\Debug\K4os.Hash.xxHash.dll
+D:\Shoprite-Management-System\bin\Debug\MySql.Data.dll
+D:\Shoprite-Management-System\bin\Debug\NuGet.Frameworks.dll
+D:\Shoprite-Management-System\bin\Debug\System.Buffers.dll
+D:\Shoprite-Management-System\bin\Debug\System.Memory.dll
+D:\Shoprite-Management-System\bin\Debug\System.Numerics.Vectors.dll
+D:\Shoprite-Management-System\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+D:\Shoprite-Management-System\bin\Debug\Ubiety.Dns.Core.dll
+D:\Shoprite-Management-System\bin\Debug\ZstdNet.dll
+D:\Shoprite-Management-System\bin\Debug\BouncyCastle.Crypto.xml
+D:\Shoprite-Management-System\bin\Debug\Google.Protobuf.pdb
+D:\Shoprite-Management-System\bin\Debug\Google.Protobuf.xml
+D:\Shoprite-Management-System\bin\Debug\K4os.Compression.LZ4.xml
+D:\Shoprite-Management-System\bin\Debug\K4os.Compression.LZ4.Streams.xml
+D:\Shoprite-Management-System\bin\Debug\K4os.Hash.xxHash.xml
+D:\Shoprite-Management-System\bin\Debug\MySql.Data.xml
+D:\Shoprite-Management-System\bin\Debug\NuGet.Frameworks.xml
+D:\Shoprite-Management-System\bin\Debug\System.Buffers.xml
+D:\Shoprite-Management-System\bin\Debug\System.Memory.xml
+D:\Shoprite-Management-System\bin\Debug\System.Numerics.Vectors.xml
+D:\Shoprite-Management-System\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+D:\Shoprite-Management-System\obj\Debug\Shoprite Management System.csproj.AssemblyReference.cache
+D:\Shoprite-Management-System\obj\Debug\Shoprite Management System.csproj.SuggestedBindingRedirects.cache
+D:\Shoprite-Management-System\obj\Debug\Shoprite_Management_System.Cashier.resources
+D:\Shoprite-Management-System\obj\Debug\Shoprite_Management_System.Category.resources
+D:\Shoprite-Management-System\obj\Debug\Shoprite_Management_System.FormLogin.resources
+D:\Shoprite-Management-System\obj\Debug\Shoprite_Management_System.POS.resources
+D:\Shoprite-Management-System\obj\Debug\Shoprite_Management_System.Product.resources
+D:\Shoprite-Management-System\obj\Debug\Shoprite_Management_System.Properties.Resources.resources
+D:\Shoprite-Management-System\obj\Debug\Shoprite_Management_System.Splash.resources
+D:\Shoprite-Management-System\obj\Debug\Shoprite Management System.csproj.GenerateResource.cache
+D:\Shoprite-Management-System\obj\Debug\Shoprite Management System.csproj.CoreCompileInputs.cache
+D:\Shoprite-Management-System\obj\Debug\Shoprite Management System.csproj.CopyComplete
+D:\Shoprite-Management-System\obj\Debug\Shoprite Management System.exe
+D:\Shoprite-Management-System\obj\Debug\Shoprite Management System.pdb

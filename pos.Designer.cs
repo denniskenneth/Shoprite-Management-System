@@ -37,6 +37,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(POS));
             this.panel3 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
             this.labelTtlQty = new System.Windows.Forms.Label();
@@ -71,6 +72,8 @@
             this.labelCashName = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.labelManageCategories = new System.Windows.Forms.Label();
+            this.printPreviewDialogTrans = new System.Windows.Forms.PrintPreviewDialog();
+            this.printDocumentTrans = new System.Drawing.Printing.PrintDocument();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gunaDataGridViewTransaction)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gunaDataGridViewProd)).BeginInit();
@@ -120,6 +123,7 @@
             this.button1.TabIndex = 27;
             this.button1.Text = "Print Receipt";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // labelTtlQty
             // 
@@ -215,6 +219,7 @@
             this.gunaDataGridViewTransaction.ThemeStyle.RowsStyle.Height = 30;
             this.gunaDataGridViewTransaction.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             this.gunaDataGridViewTransaction.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            this.gunaDataGridViewTransaction.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gunaDataGridViewTransaction_CellContentClick);
             // 
             // labelOverallTtl
             // 
@@ -640,6 +645,21 @@
             this.labelManageCategories.Text = "Manage Sales";
             this.labelManageCategories.Click += new System.EventHandler(this.labelManageCategories_Click);
             // 
+            // printPreviewDialogTrans
+            // 
+            this.printPreviewDialogTrans.AutoScrollMargin = new System.Drawing.Size(0, 0);
+            this.printPreviewDialogTrans.AutoScrollMinSize = new System.Drawing.Size(0, 0);
+            this.printPreviewDialogTrans.ClientSize = new System.Drawing.Size(400, 300);
+            this.printPreviewDialogTrans.Document = this.printDocumentTrans;
+            this.printPreviewDialogTrans.Enabled = true;
+            this.printPreviewDialogTrans.Icon = ((System.Drawing.Icon)(resources.GetObject("printPreviewDialogTrans.Icon")));
+            this.printPreviewDialogTrans.Name = "printPreviewDialogTrans";
+            this.printPreviewDialogTrans.Visible = false;
+            // 
+            // printDocumentTrans
+            // 
+            this.printDocumentTrans.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocumentTrans_PrintPage);
+            // 
             // POS
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -700,5 +720,7 @@
         private System.Windows.Forms.Label labelTtlQty;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.PrintPreviewDialog printPreviewDialogTrans;
+        private System.Drawing.Printing.PrintDocument printDocumentTrans;
     }
 }
